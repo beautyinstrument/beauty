@@ -315,29 +315,25 @@
 
     .photo-board {
       position: relative;
-      display: grid;
-      grid-template-columns: 1fr 160px;
-      grid-template-rows: 330px 190px;
-      gap: 14px;
+      width: min(100%, 560px);
+      justify-self: end;
     }
 
     .photo-card {
       position: relative;
       overflow: hidden;
-      border: 1px solid rgba(32, 119, 212, .16);
-      border-radius: 26px;
-      background: #fff;
-      box-shadow: var(--shadow);
+      border-radius: 28px;
+      background: transparent;
     }
 
     .photo-card img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
 
     .photo-card--main {
-      grid-column: 1 / 3;
+      aspect-ratio: 98 / 67;
     }
 
     .photo-card--small {
@@ -856,12 +852,8 @@
       }
 
       .photo-board {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 250px 150px;
-      }
-
-      .photo-card--main {
-        grid-column: 1 / 3;
+        width: 100%;
+        justify-self: stretch;
       }
 
       .direction__photo {
@@ -932,16 +924,9 @@
           </div>
         </div>
 
-        <div class="photo-board" aria-label="Фотографии кабинета и процедур аппаратной косметологии">
+        <div class="photo-board" aria-label="Фотография кабинета и процедур аппаратной косметологии">
           <figure class="photo-card photo-card--main">
-            <img src="https://optim.tildacdn.com/tild3030-6334-4362-b665-306535303838/-/cover/312x312/center/center/-/format/webp/noroot.png.webp" alt="Процедура аппаратной косметологии в кабинете">
-            <figcaption class="photo-badge"><strong>Живой кабинет, реальные процедуры</strong>Визуальный акцент на оборудовании, специалисте и клиентском опыте.</figcaption>
-          </figure>
-          <figure class="photo-card photo-card--small">
-            <img src="https://optim.tildacdn.com/tild6131-3166-4663-b161-336631646635/-/cover/312x312/center/center/-/format/webp/5V7A0064.JPG.webp" alt="Аппаратная процедура по телу">
-          </figure>
-          <figure class="photo-card photo-card--small">
-            <img src="https://optim.tildacdn.com/tild6533-6362-4633-b362-653563306261/-/cover/312x312/center/center/-/format/webp/noroot.png.webp" alt="Интерьер кабинета с аппаратами">
+            <img src="assets/hero-cabinet-visual.jpg" alt="Живой кабинет аппаратной косметологии с процедурами и оборудованием">
           </figure>
         </div>
       </div>
