@@ -3,9 +3,1183 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Привет, мир!</title>
+  <meta name="description" content="Запуск кабинета аппаратной косметологии: оборудование, обучение, протоколы и бизнес-модель для предпринимателей.">
+  <title>Запуск кабинета аппаратной косметологии | Beauty Instrument</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600;700;800&family=Literata:opsz,wght@7..72,500;7..72,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #202224;
+      --muted: #636762;
+      --soft: #f6f3ee;
+      --porcelain: #fffdf9;
+      --champagne: #d6b779;
+      --sage: #8b9a82;
+      --graphite: #2f3432;
+      --line: rgba(32, 34, 36, .14);
+      --shadow: 0 24px 70px rgba(48, 45, 39, .14);
+      --radius: 6px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--porcelain);
+      font-family: "Commissioner", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      text-rendering: optimizeLegibility;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .38;
+      background-image:
+        linear-gradient(rgba(32, 34, 36, .045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(32, 34, 36, .045) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, #000 0%, transparent 70%);
+      z-index: -1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .page {
+      overflow: hidden;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(255, 255, 255, .18);
+      background: rgba(32, 34, 36, .9);
+      color: #fffdf9;
+      backdrop-filter: blur(18px);
+    }
+
+    .nav__inner {
+      width: min(var(--max), calc(100% - 40px));
+      min-height: 72px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: grid;
+      gap: 2px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    .brand span {
+      color: rgba(255, 253, 249, .62);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      text-transform: none;
+    }
+
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: rgba(255, 253, 249, .76);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .nav__phone {
+      color: #fffdf9;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 24px;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: #fffdf9;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .02em;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 38px rgba(32, 34, 36, .18);
+      background: #111313;
+    }
+
+    .button:focus-visible,
+    a:focus-visible {
+      outline: 3px solid rgba(214, 183, 121, .78);
+      outline-offset: 4px;
+    }
+
+    .button--light {
+      background: #fffdf9;
+      color: var(--ink);
+      border-color: rgba(255, 253, 249, .42);
+    }
+
+    .button--light:hover {
+      background: #f8efe0;
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at 78% 18%, rgba(214, 183, 121, .24), transparent 28%),
+        linear-gradient(135deg, #2f3432 0%, #202224 52%, #121414 100%);
+      color: #fffdf9;
+    }
+
+    .hero__inner {
+      width: min(var(--max), calc(100% - 40px));
+      min-height: calc(100vh - 72px);
+      max-height: 860px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr);
+      gap: 54px;
+      align-items: center;
+      padding: 58px 0 70px;
+    }
+
+    .kicker {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid rgba(214, 183, 121, .46);
+      color: #ead7ad;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      background: var(--champagne);
+      border-radius: 50%;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      max-width: 790px;
+      margin-top: 28px;
+      font-family: "Literata", Georgia, serif;
+      font-size: clamp(44px, 7.4vw, 94px);
+      line-height: .92;
+      font-weight: 600;
+    }
+
+    .hero__lead {
+      max-width: 610px;
+      margin-top: 28px;
+      color: rgba(255, 253, 249, .76);
+      font-size: clamp(18px, 2vw, 22px);
+      line-height: 1.55;
+    }
+
+    .hero__actions {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 34px;
+    }
+
+    .hero__note {
+      max-width: 260px;
+      color: rgba(255, 253, 249, .62);
+      font-size: 13px;
+    }
+
+    .hero__stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      max-width: 650px;
+      margin-top: 48px;
+      background: rgba(255, 253, 249, .14);
+      border: 1px solid rgba(255, 253, 249, .16);
+    }
+
+    .hero__stat {
+      min-height: 116px;
+      padding: 18px;
+      background: rgba(255, 253, 249, .055);
+    }
+
+    .hero__stat strong {
+      display: block;
+      color: #fffdf9;
+      font-family: "Literata", Georgia, serif;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1;
+      font-weight: 600;
+    }
+
+    .hero__stat span {
+      display: block;
+      margin-top: 10px;
+      color: rgba(255, 253, 249, .68);
+      font-size: 13px;
+    }
+
+    .cabinet-map {
+      position: relative;
+      min-height: 610px;
+      border: 1px solid rgba(255, 253, 249, .18);
+      background:
+        linear-gradient(90deg, rgba(255, 253, 249, .06) 1px, transparent 1px),
+        linear-gradient(rgba(255, 253, 249, .06) 1px, transparent 1px),
+        rgba(255, 253, 249, .055);
+      background-size: 34px 34px;
+      box-shadow: inset 0 0 0 12px rgba(255, 253, 249, .035), var(--shadow);
+      overflow: hidden;
+    }
+
+    .cabinet-map::before {
+      content: "";
+      position: absolute;
+      inset: 34px;
+      border: 1px solid rgba(214, 183, 121, .72);
+    }
+
+    .cabinet-map__photo {
+      position: absolute;
+      left: 54px;
+      right: 54px;
+      top: 56px;
+      height: 285px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 253, 249, .18);
+      background: #1c1f1e;
+    }
+
+    .cabinet-map__photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .82;
+      filter: saturate(.82) contrast(1.02);
+    }
+
+    .cabinet-map__photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 40%, rgba(18, 20, 20, .58));
+    }
+
+    .cabinet-map__bed,
+    .cabinet-map__device,
+    .cabinet-map__desk {
+      position: absolute;
+      border: 1px solid rgba(255, 253, 249, .55);
+      background: rgba(255, 253, 249, .09);
+    }
+
+    .cabinet-map__bed {
+      left: 74px;
+      bottom: 96px;
+      width: 210px;
+      height: 92px;
+    }
+
+    .cabinet-map__device {
+      right: 80px;
+      bottom: 114px;
+      width: 96px;
+      height: 154px;
+    }
+
+    .cabinet-map__desk {
+      right: 88px;
+      top: 374px;
+      width: 150px;
+      height: 54px;
+    }
+
+    .cabinet-map__label {
+      position: absolute;
+      left: 54px;
+      bottom: 46px;
+      max-width: 270px;
+      color: rgba(255, 253, 249, .72);
+      font-size: 13px;
+    }
+
+    .cabinet-map__label strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #fffdf9;
+      font-size: 22px;
+    }
+
+    .section {
+      padding: 104px 0;
+    }
+
+    .section--soft {
+      background: var(--soft);
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, .88fr) minmax(260px, .48fr);
+      gap: 48px;
+      align-items: end;
+      margin-bottom: 48px;
+    }
+
+    .section-label {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--sage);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-family: "Literata", Georgia, serif;
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 1.02;
+      font-weight: 600;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border: 1px solid var(--line);
+      background: var(--porcelain);
+    }
+
+    .why-card {
+      min-height: 230px;
+      padding: 26px 22px;
+      border-right: 1px solid var(--line);
+    }
+
+    .why-card:last-child {
+      border-right: 0;
+    }
+
+    .why-card strong {
+      display: block;
+      min-height: 64px;
+      font-family: "Literata", Georgia, serif;
+      font-size: 31px;
+      line-height: 1;
+      font-weight: 600;
+      color: var(--graphite);
+    }
+
+    .why-card span {
+      display: block;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .directions {
+      display: grid;
+      gap: 22px;
+    }
+
+    .direction {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      min-height: 430px;
+      border: 1px solid var(--line);
+      background: var(--porcelain);
+      box-shadow: 0 12px 36px rgba(48, 45, 39, .06);
+    }
+
+    .direction:nth-child(even) {
+      grid-template-columns: 1.15fr 1fr;
+    }
+
+    .direction:nth-child(even) .direction__intro {
+      order: 2;
+    }
+
+    .direction__intro {
+      padding: clamp(28px, 5vw, 48px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 28px;
+      background:
+        linear-gradient(90deg, rgba(32, 34, 36, .035) 1px, transparent 1px),
+        linear-gradient(rgba(32, 34, 36, .035) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+
+    .direction__tag {
+      display: inline-flex;
+      width: fit-content;
+      padding: 7px 10px;
+      border: 1px solid rgba(139, 154, 130, .36);
+      color: var(--sage);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      margin-top: 18px;
+      font-family: "Literata", Georgia, serif;
+      font-size: clamp(30px, 4vw, 50px);
+      line-height: 1.03;
+      font-weight: 600;
+    }
+
+    .direction__text {
+      max-width: 520px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .direction__metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .metric {
+      padding: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255, 253, 249, .7);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 24px;
+      line-height: 1.08;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .direction__details {
+      padding: clamp(28px, 5vw, 48px);
+      display: grid;
+      align-content: center;
+      gap: 28px;
+      background: #fffaf1;
+    }
+
+    .benefits {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .benefits li {
+      position: relative;
+      padding-left: 24px;
+      color: var(--graphite);
+      font-weight: 600;
+    }
+
+    .benefits li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .65em;
+      width: 8px;
+      height: 8px;
+      background: var(--champagne);
+    }
+
+    .device-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .device {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+      border-top: 1px solid rgba(32, 34, 36, .12);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .device strong {
+      color: var(--ink);
+      font-size: 15px;
+    }
+
+    .model {
+      display: grid;
+      grid-template-columns: minmax(0, .86fr) minmax(340px, .7fr);
+      gap: 54px;
+      align-items: center;
+    }
+
+    .model-board {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border: 1px solid var(--line);
+      background: #fffdf9;
+      box-shadow: var(--shadow);
+    }
+
+    .model-cell {
+      min-height: 190px;
+      padding: 28px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .model-cell:nth-child(2n) {
+      border-right: 0;
+    }
+
+    .model-cell:nth-last-child(-n+2) {
+      border-bottom: 0;
+    }
+
+    .model-cell strong {
+      display: block;
+      font-family: "Literata", Georgia, serif;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: .96;
+      font-weight: 600;
+    }
+
+    .model-cell span {
+      display: block;
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .support-card {
+      padding: 34px;
+      border: 1px solid var(--line);
+      background: var(--graphite);
+      color: #fffdf9;
+    }
+
+    .support-card h3 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 42px);
+    }
+
+    .support-card p {
+      margin-top: 18px;
+      color: rgba(255, 253, 249, .72);
+    }
+
+    .support-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .support-list span {
+      padding: 12px 14px;
+      border: 1px solid rgba(255, 253, 249, .16);
+      color: rgba(255, 253, 249, .78);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .cta {
+      padding: 98px 0;
+      background:
+        linear-gradient(90deg, rgba(255, 253, 249, .05) 1px, transparent 1px),
+        linear-gradient(rgba(255, 253, 249, .05) 1px, transparent 1px),
+        var(--ink);
+      background-size: 48px 48px;
+      color: #fffdf9;
+    }
+
+    .cta__inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 42px;
+      align-items: end;
+    }
+
+    .cta h2 {
+      max-width: 780px;
+    }
+
+    .cta p {
+      max-width: 620px;
+      margin-top: 20px;
+      color: rgba(255, 253, 249, .72);
+      font-size: 18px;
+    }
+
+    .cta__panel {
+      min-width: 320px;
+      padding: 26px;
+      border: 1px solid rgba(255, 253, 249, .18);
+      background: rgba(255, 253, 249, .07);
+    }
+
+    .cta__phone {
+      display: block;
+      margin-bottom: 18px;
+      font-size: 26px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .footer {
+      padding: 26px 0;
+      background: #151717;
+      color: rgba(255, 253, 249, .56);
+      font-size: 13px;
+    }
+
+    .footer .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+
+    @media (max-width: 1020px) {
+      .nav__links {
+        display: none;
+      }
+
+      .hero__inner,
+      .section-head,
+      .model,
+      .cta__inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero__inner {
+        min-height: auto;
+        max-height: none;
+      }
+
+      .cabinet-map {
+        min-height: 520px;
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why-card {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .why-card:nth-child(2n) {
+        border-right: 0;
+      }
+
+      .direction,
+      .direction:nth-child(even) {
+        grid-template-columns: 1fr;
+      }
+
+      .direction:nth-child(even) .direction__intro {
+        order: 0;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav__inner,
+      .wrap,
+      .hero__inner,
+      .cta__inner {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .nav__inner {
+        min-height: 64px;
+      }
+
+      .nav__phone {
+        font-size: 13px;
+      }
+
+      .hero__inner,
+      .section {
+        padding-top: 54px;
+        padding-bottom: 58px;
+      }
+
+      h1 {
+        font-size: clamp(42px, 13vw, 60px);
+      }
+
+      .hero__stats,
+      .why-grid,
+      .direction__metrics,
+      .model-board,
+      .support-list {
+        grid-template-columns: 1fr;
+      }
+
+      .hero__stat,
+      .why-card,
+      .model-cell {
+        min-height: auto;
+      }
+
+      .cabinet-map {
+        min-height: 430px;
+      }
+
+      .cabinet-map::before {
+        inset: 18px;
+      }
+
+      .cabinet-map__photo {
+        left: 30px;
+        right: 30px;
+        top: 34px;
+        height: 210px;
+      }
+
+      .cabinet-map__bed {
+        left: 36px;
+        bottom: 92px;
+        width: 152px;
+        height: 70px;
+      }
+
+      .cabinet-map__device {
+        right: 38px;
+        bottom: 102px;
+        width: 72px;
+        height: 112px;
+      }
+
+      .cabinet-map__desk {
+        display: none;
+      }
+
+      .cabinet-map__label {
+        left: 30px;
+        right: 30px;
+        bottom: 28px;
+      }
+
+      .why-card,
+      .model-cell {
+        border-right: 0;
+      }
+
+      .model-cell {
+        border-bottom: 1px solid var(--line) !important;
+      }
+
+      .model-cell:last-child {
+        border-bottom: 0 !important;
+      }
+
+      .device {
+        display: grid;
+        gap: 6px;
+      }
+
+      .cta {
+        padding: 64px 0;
+      }
+
+      .cta__panel {
+        min-width: 0;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Привет, мир!</h1>
+  <div class="page">
+    <nav class="nav" aria-label="Основная навигация">
+      <div class="nav__inner">
+        <a class="brand" href="#top" aria-label="Beauty Instrument">
+          Beauty Instrument
+          <span>кабинет аппаратной косметологии</span>
+        </a>
+        <div class="nav__links" aria-label="Разделы страницы">
+          <a href="#why">Почему это работает</a>
+          <a href="#directions">Направления</a>
+          <a href="#model">Бизнес-модель</a>
+          <a class="nav__phone" href="tel:88006003890">8 800 600 38 90</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero" id="top">
+      <div class="hero__inner">
+        <div>
+          <span class="kicker">Запуск под ключ</span>
+          <h1>Откройте кабинет аппаратной косметологии как управляемый бизнес</h1>
+          <p class="hero__lead">Подберём направление, оборудование, протоколы, обучение и модель запуска под вашу площадь, бюджет и город. Без лишнего штата и длинного входа в индустрию.</p>
+          <div class="hero__actions">
+            <a class="button button--light" href="#consult">Получить консультацию</a>
+            <p class="hero__note">На консультации разберём бюджет, помещение и направление, которое быстрее выйдет на плановую загрузку.</p>
+          </div>
+          <div class="hero__stats" aria-label="Ключевые показатели">
+            <div class="hero__stat">
+              <strong>от 10 м²</strong>
+              <span>достаточно для старта кабинета</span>
+            </div>
+            <div class="hero__stat">
+              <strong>от 100 тыс. ₽</strong>
+              <span>вложения в базовый запуск</span>
+            </div>
+            <div class="hero__stat">
+              <strong>от 1 мес.</strong>
+              <span>срок окупаемости по модели</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cabinet-map" aria-label="Визуальная схема кабинета аппаратной косметологии">
+          <div class="cabinet-map__photo">
+            <img src="https://optim.tildacdn.com/tild6366-6331-4166-a561-336236633035/-/resize/515x/-/format/webp/ChatGPT_Image_25__20.png.webp" alt="Интерьер кабинета аппаратной косметологии с оборудованием">
+          </div>
+          <div class="cabinet-map__bed" aria-hidden="true"></div>
+          <div class="cabinet-map__device" aria-hidden="true"></div>
+          <div class="cabinet-map__desk" aria-hidden="true"></div>
+          <p class="cabinet-map__label"><strong>Кабинет, аппарат, протокол</strong>Модель строится вокруг компактной площади, понятного набора процедур и оборудования, которое даёт воспроизводимый результат.</p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section section--soft" id="why">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <span class="section-label">Почему аппаратная косметология</span>
+              <h2>Экономика понятнее, чем в классическом салоне красоты</h2>
+            </div>
+            <p>Вместо большого штата и сложного сервиса предприниматель управляет компактным кабинетом: кушетка, аппарат, обученный специалист и протоколы процедур.</p>
+          </div>
+
+          <div class="why-grid">
+            <article class="why-card">
+              <strong>от 1 месяца</strong>
+              <span>потенциальная окупаемость салона при рабочей загрузке</span>
+            </article>
+            <article class="why-card">
+              <strong>&lt; 10%</strong>
+              <span>себестоимость услуг среди самых низких в beauty-сфере</span>
+            </article>
+            <article class="why-card">
+              <strong>простое управление</strong>
+              <span>кабинет, кушетка, аппарат и понятное расписание процедур</span>
+            </article>
+            <article class="why-card">
+              <strong>без лицензии</strong>
+              <span>для немедицинских эстетических услуг не требуется медицинская лицензия</span>
+            </article>
+            <article class="why-card">
+              <strong>меньше зависимости</strong>
+              <span>результат создаёт технология и протокол, а не только опыт мастера</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="directions">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <span class="section-label">Четыре формата запуска</span>
+              <h2>Выберите направление под спрос, бюджет и площадь</h2>
+            </div>
+            <p>Мы не перегружаем старт каталогом. Для каждого формата достаточно 2–3 аппаратов, понятной линейки услуг и расчёта загрузки.</p>
+          </div>
+
+          <div class="directions">
+            <article class="direction">
+              <div class="direction__intro">
+                <div>
+                  <span class="direction__tag">Эпиляция</span>
+                  <h3>Кабинет эпиляции</h3>
+                  <p class="direction__text">Высокочастотная услуга для регулярной клиентской базы: быстрый вход в расписание, минимальные расходники и понятная логика повторных визитов.</p>
+                </div>
+                <div class="direction__metrics">
+                  <div class="metric">
+                    <strong>4 000 ₽</strong>
+                    <span>средний чек процедуры</span>
+                  </div>
+                  <div class="metric">
+                    <strong>250–400 тыс. ₽</strong>
+                    <span>выручка в месяц при 50–60% загрузки</span>
+                  </div>
+                </div>
+              </div>
+              <div class="direction__details">
+                <ul class="benefits">
+                  <li>Кабинет 10–12 м² и быстрое обучение персонала</li>
+                  <li>До 528 000 ₽ выручки в месяц при 6 клиентах в день и 22 рабочих днях</li>
+                  <li>Постоянная клиентская база за счёт курсов и поддерживающих процедур</li>
+                </ul>
+                <div class="device-list" aria-label="Главные аппараты для кабинета эпиляции">
+                  <div class="device"><strong>Диодный лазер K-26 800W</strong><span>компактный корпус, охлаждение до -20°C</span></div>
+                  <div class="device"><strong>Elos Expert</strong><span>ELOS-эпиляция и омоложение, 6 фильтров</span></div>
+                  <div class="device"><strong>One touch 500 Вт</strong><span>три волны 755/808/1064 нм, ресурс 20 млн вспышек</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="direction">
+              <div class="direction__intro">
+                <div>
+                  <span class="direction__tag">Фигура</span>
+                  <h3>Кабинет коррекции фигуры</h3>
+                  <p class="direction__text">Формат для клиентов, которые покупают не одну процедуру, а курс. Это повышает средний чек и делает выручку более прогнозируемой.</p>
+                </div>
+                <div class="direction__metrics">
+                  <div class="metric">
+                    <strong>6–12 процедур</strong>
+                    <span>типовой курс клиента</span>
+                  </div>
+                  <div class="metric">
+                    <strong>15–80 тыс. ₽</strong>
+                    <span>чек клиента за курс</span>
+                  </div>
+                </div>
+              </div>
+              <div class="direction__details">
+                <ul class="benefits">
+                  <li>Площадь от 10–15 м² и один специалист на смене</li>
+                  <li>2–3 востребованных аппарата закрывают основные запросы по телу</li>
+                  <li>Протоколы процедур помогают продавать курсами, а не разовыми визитами</li>
+                </ul>
+                <div class="device-list" aria-label="Главные аппараты для коррекции фигуры">
+                  <div class="device"><strong>CRET RF</strong><span>монополярный RF-лифтинг, частота 448 кГц</span></div>
+                  <div class="device"><strong>Slim Complex</strong><span>RF-лифтинг, кавитация, вакуумный массаж с RF</span></div>
+                  <div class="device"><strong>PressoTop</strong><span>прессотерапия, отёчность и целлюлит</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="direction">
+              <div class="direction__intro">
+                <div>
+                  <span class="direction__tag">Омоложение</span>
+                  <h3>Кабинет омоложения</h3>
+                  <p class="direction__text">Запуск для предпринимателей, которым нужен премиальный спрос на уход, лифтинг и комплексные процедуры лица и тела.</p>
+                </div>
+                <div class="direction__metrics">
+                  <div class="metric">
+                    <strong>1 день</strong>
+                    <span>обучение и быстрый старт</span>
+                  </div>
+                  <div class="metric">
+                    <strong>от 300 тыс. ₽</strong>
+                    <span>вложения, основное — аппарат</span>
+                  </div>
+                </div>
+              </div>
+              <div class="direction__details">
+                <ul class="benefits">
+                  <li>Площадь от 15 м² для кабинета с комфортной клиентской зоной</li>
+                  <li>Один аппарат может закрывать несколько процедур в прайсе</li>
+                  <li>Подходит для действующих студий, которые хотят поднять чек</li>
+                </ul>
+                <div class="device-list" aria-label="Главные аппараты для кабинета омоложения">
+                  <div class="device"><strong>Elos Expert</strong><span>омоложение и работа с фотоэстетикой</span></div>
+                  <div class="device"><strong>Perfect PRO</strong><span>многофункциональный комбайн 7 манипул</span></div>
+                  <div class="device"><strong>CRET RF</strong><span>RF-лифтинг лица и тела</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="direction">
+              <div class="direction__intro">
+                <div>
+                  <span class="direction__tag">Минимальный штат</span>
+                  <h3>Кабинет без администратора и косметолога</h3>
+                  <p class="direction__text">Формат для запуска с низкими постоянными расходами: меньше ФОТ, меньше управленческой нагрузки, больше контроля над качеством сервиса.</p>
+                </div>
+                <div class="direction__metrics">
+                  <div class="metric">
+                    <strong>экономия ФОТ</strong>
+                    <span>без отдельного администратора</span>
+                  </div>
+                  <div class="metric">
+                    <strong>без косметолога</strong>
+                    <span>аппараты не требуют профильного специалиста</span>
+                  </div>
+                </div>
+              </div>
+              <div class="direction__details">
+                <ul class="benefits">
+                  <li>Процедуры можно вести по понятным регламентам после обучения</li>
+                  <li>Нет перекладывания задач между сотрудниками</li>
+                  <li>Сокращение административных расходов повышает маржинальность</li>
+                </ul>
+                <div class="device-list" aria-label="Главные аппараты для кабинета без администратора и косметолога">
+                  <div class="device"><strong>EMSlimmer</strong><span>до 30 000 сокращений за сеанс, не требует косметолога</span></div>
+                  <div class="device"><strong>PressoTop</strong><span>понятная процедура прессотерапии</span></div>
+                  <div class="device"><strong>IQ-roll Sketch</strong><span>роликовый массаж по телу и лицу</span></div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--soft" id="model">
+        <div class="wrap model">
+          <div>
+            <span class="section-label">Бизнес-модель</span>
+            <h2>Стартуйте с компактной площади и считайте кабинет как юнит</h2>
+            <p class="direction__text">Сначала определяем направление и плановую загрузку, затем подбираем набор аппаратов, обучение и прайс. Такой подход помогает не покупать лишнее и быстрее выйти на управляемую экономику.</p>
+          </div>
+          <div class="model-board" aria-label="Показатели бизнес-модели">
+            <div class="model-cell">
+              <strong>от 10 м²</strong>
+              <span>площадь кабинета</span>
+            </div>
+            <div class="model-cell">
+              <strong>от 100 тыс. ₽</strong>
+              <span>вложения в запуск</span>
+            </div>
+            <div class="model-cell">
+              <strong>от 250 тыс. ₽</strong>
+              <span>выручка кабинета</span>
+            </div>
+            <div class="model-cell">
+              <strong>от 20%</strong>
+              <span>минимальная прибыль</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap model">
+          <div class="support-card">
+            <h3>Не просто аппарат, а система запуска</h3>
+            <p>Beauty Instrument помогает собрать рабочую модель: оборудование, обучение, маркетинг, подбор помещения и персонала. Предприниматель получает не список товаров, а понятный план открытия кабинета.</p>
+            <div class="support-list" aria-label="Что входит в сопровождение">
+              <span>Обучение</span>
+              <span>Маркетинг</span>
+              <span>Персонал</span>
+              <span>Помещение</span>
+            </div>
+          </div>
+          <div>
+            <span class="section-label">Как принимаем решение</span>
+            <h2>Сначала считаем спрос и экономику, потом выбираем аппараты</h2>
+            <p class="direction__text">На консультации разберём город, помещение, бюджет и желаемую роль собственника. После этого предложим направление, которое не будет перегружать запуск лишним штатом и оборудованием.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="cta" id="consult">
+      <div class="cta__inner">
+        <div>
+          <span class="kicker">Бесплатная консультация</span>
+          <h2>Разберите свой запуск с экспертом Beauty Instrument</h2>
+          <p>Позвоните или оставьте заявку: подберём формат кабинета, посчитаем стартовый набор оборудования и покажем, как выйти на первую выручку без лишних расходов.</p>
+        </div>
+        <div class="cta__panel">
+          <a class="cta__phone" href="tel:88006003890">8 800 600 38 90</a>
+          <a class="button button--light" href="tel:88006003890">Получить консультацию</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="wrap">
+        <span>Beauty Instrument</span>
+        <span>Оборудование, обучение и запуск кабинетов аппаратной косметологии</span>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
