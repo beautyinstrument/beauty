@@ -1,0 +1,1441 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Effective Lifting HIFU - 3D аппарат ультразвукового SMAS-лифтинга Beauty Instrument с 7 картриджами и регистрационным удостоверением РЗН 2021/13533.">
+  <title>Effective Lifting 3D HIFU с РУ | Beauty Instrument</title>
+  <style>
+    :root {
+      --apple-blue: #0071e3;
+      --link-blue: #0066cc;
+      --signal-blue: #2997ff;
+      --carbon: #1d1d1f;
+      --frost: #f5f5f7;
+      --ice: #f4f8fb;
+      --smoke: #333333;
+      --graphite: #474747;
+      --ash: #707070;
+      --mist: #858585;
+      --onyx: #000000;
+      --pebble: #e2e2e5;
+      --hairline: #d2d2d7;
+      --white: #ffffff;
+      --line: rgba(29, 29, 31, .12);
+      --max: 1440px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--carbon);
+      background: var(--frost);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+      line-height: 1.55;
+      text-rendering: optimizeLegibility;
+      font-feature-settings: "numr";
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    .page {
+      overflow: hidden;
+    }
+
+    .wrap,
+    .global-nav__inner,
+    .mini-nav__inner,
+    .hero__inner,
+    .cta__inner {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .global-nav {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid var(--smoke);
+      background: var(--carbon);
+      backdrop-filter: blur(18px);
+    }
+
+    .global-nav__inner {
+      min-height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      padding: 8px 0;
+    }
+
+    .global-nav__brand,
+    .global-nav__icon {
+      color: var(--frost);
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    .global-nav__brand {
+      min-width: 64px;
+      font-weight: 600;
+    }
+
+    .global-nav__links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      color: var(--frost);
+      font-size: 12px;
+      font-weight: 400;
+      flex: 1;
+    }
+
+    .global-nav__tools {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 18px;
+      min-width: 64px;
+    }
+
+    .global-nav__icon {
+      width: 18px;
+      height: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .global-nav__icon svg {
+      width: 17px;
+      height: 17px;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      fill: none;
+    }
+
+    .mini-nav {
+      position: sticky;
+      top: 41px;
+      z-index: 25;
+      border-bottom: 1px solid var(--hairline);
+      background: rgba(255, 255, 255, .92);
+      backdrop-filter: blur(18px);
+    }
+
+    .mini-nav__inner {
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .mini-nav__title {
+      color: var(--carbon);
+      font-size: 21px;
+      font-weight: 600;
+      line-height: 1.24;
+      white-space: nowrap;
+    }
+
+    .wordmark {
+      color: var(--link-blue);
+    }
+
+    .mini-nav__links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--smoke);
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .mini-nav__phone {
+      color: var(--link-blue);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 15px;
+      border: 0;
+      border-radius: 980px;
+      background: var(--apple-blue);
+      box-shadow: none;
+      color: var(--ice);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.29;
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: var(--link-blue);
+      box-shadow: none;
+    }
+
+    .button--ghost {
+      background: transparent;
+      border: 1px solid var(--link-blue);
+      color: var(--link-blue);
+      box-shadow: none;
+    }
+
+    .button--ghost:hover {
+      background: var(--ice);
+      box-shadow: none;
+    }
+
+    .ghost-link {
+      color: var(--link-blue);
+      font: inherit;
+      font-weight: 400;
+      text-decoration: none;
+    }
+
+    .ghost-link:hover {
+      text-decoration: underline;
+    }
+
+    .button:focus-visible,
+    a:focus-visible {
+      outline: 3px solid rgba(41, 151, 255, .36);
+      outline-offset: 4px;
+    }
+
+    .hero {
+      position: relative;
+      padding: 64px 0 96px;
+      background: var(--frost);
+    }
+
+    .hero__inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero__content {
+      width: min(920px, 100%);
+      margin: 0 auto;
+    }
+
+    .kicker {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 10px;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: var(--link-blue);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 18px;
+      height: 2px;
+      background: var(--signal-blue);
+    }
+
+    h1 {
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 22px;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+      font-size: clamp(44px, 6vw, 56px);
+      font-weight: 600;
+      line-height: 1.07;
+      letter-spacing: 0;
+    }
+
+    .hero__lead {
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 24px;
+      color: var(--smoke);
+      font-size: clamp(21px, 2vw, 26px);
+      font-weight: 300;
+      line-height: 1.5;
+    }
+
+    .hero__actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      width: min(980px, 100%);
+      margin: 0 auto;
+    }
+
+    .trust-item {
+      min-height: 112px;
+      padding: 24px;
+      border: 0;
+      border-top: 1px solid var(--hairline);
+      border-radius: 8px;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .trust-item strong {
+      display: block;
+      color: var(--carbon);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+      font-size: clamp(24px, 2.7vw, 34px);
+      font-weight: 600;
+      line-height: 1.05;
+    }
+
+    .trust-item span {
+      display: block;
+      margin-top: 10px;
+      color: var(--ash);
+      font-size: 14px;
+      line-height: 1.29;
+    }
+
+    .product-stage {
+      position: relative;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      min-height: 560px;
+      display: grid;
+      align-items: center;
+      padding: 24px;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .sonic-map {
+      display: none;
+    }
+
+    .sonic-map::before,
+    .sonic-map::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 76%;
+      height: 2px;
+      background: transparent;
+      transform-origin: center;
+    }
+
+    .sonic-map::before {
+      transform: translate(-50%, -50%) rotate(32deg);
+    }
+
+    .sonic-map::after {
+      transform: translate(-50%, -50%) rotate(-32deg);
+    }
+
+    .product-photo {
+      position: relative;
+      z-index: 1;
+      width: 86vw;
+      margin: 0 auto 72px;
+      filter: none;
+    }
+
+    .product-photo img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+    .doc-card {
+      position: absolute;
+      left: 22px;
+      bottom: 22px;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 78px 1fr;
+      gap: 14px;
+      width: min(360px, calc(100% - 44px));
+      padding: 12px;
+      border: 1px solid var(--mist);
+      border-radius: 8px;
+      background: transparent;
+      box-shadow: none;
+      backdrop-filter: blur(12px);
+    }
+
+    .doc-card img {
+      width: 78px;
+      height: 98px;
+      border: 1px solid var(--mist);
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .doc-card strong {
+      display: block;
+      color: var(--link-blue);
+      font-size: 14px;
+      line-height: 1.25;
+    }
+
+    .doc-card span {
+      display: block;
+      margin-top: 6px;
+      color: var(--ash);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .section {
+      padding: 64px 0;
+    }
+
+    .section--soft {
+      background: var(--frost);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, .92fr) minmax(260px, .48fr);
+      gap: 64px;
+      align-items: end;
+      margin-bottom: 42px;
+    }
+
+    .section-label {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--link-blue);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 600;
+      line-height: 1.14;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+      font-size: clamp(21px, 2.5vw, 28px);
+      font-weight: 600;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    .section-head p,
+    .body-text {
+      color: var(--ash);
+      font-size: 17px;
+      line-height: 1.47;
+    }
+
+    .proof-grid,
+    .audience-grid,
+    .support-grid,
+    .service-card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .photo-card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(260px, 1fr));
+      gap: 12px;
+    }
+
+    .media-card {
+      min-height: 390px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+      border-radius: 8px;
+      background:
+        linear-gradient(180deg, rgba(0, 0, 0, .18), rgba(0, 0, 0, .70)),
+        var(--media-image) center / cover no-repeat,
+        var(--onyx);
+      color: var(--white);
+      isolation: isolate;
+    }
+
+    .media-card__label {
+      color: rgba(255, 255, 255, .82);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.29;
+    }
+
+    .media-card__title {
+      max-width: 310px;
+      color: var(--white);
+      font-size: clamp(24px, 2vw, 28px);
+      font-weight: 600;
+      line-height: 1.18;
+    }
+
+    .media-card__bottom {
+      display: grid;
+      gap: 16px;
+      justify-items: start;
+    }
+
+    .media-card__button {
+      display: inline-flex;
+      min-height: 38px;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 14px;
+      border-radius: 980px;
+      background: var(--white);
+      color: var(--carbon);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.29;
+    }
+
+    .proof-card,
+    .audience-card,
+    .spec-card,
+    .support-card,
+    .warning {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .proof-card,
+    .audience-card,
+    .support-card {
+      min-height: 205px;
+      padding: 24px;
+    }
+
+    .proof-card strong,
+    .audience-card strong,
+    .support-card strong {
+      display: block;
+      color: var(--carbon);
+      font-size: 17px;
+      line-height: 1.32;
+    }
+
+    .proof-card span,
+    .audience-card span,
+    .support-card span {
+      display: block;
+      margin-top: 14px;
+      color: var(--ash);
+      font-size: 14px;
+      line-height: 1.62;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, .86fr) minmax(360px, .74fr);
+      gap: 64px;
+      align-items: center;
+    }
+
+    .layer-stack {
+      display: grid;
+      gap: 10px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, .96), rgba(244, 248, 251, .94)),
+        linear-gradient(90deg, transparent 0 31%, rgba(41, 151, 255, .16) 31% 32%, transparent 32% 100%);
+      box-shadow: none;
+    }
+
+    .layer {
+      display: grid;
+      grid-template-columns: 74px 1fr;
+      gap: 14px;
+      align-items: center;
+      min-height: 68px;
+      padding: 14px;
+      border: 1px solid var(--mist);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .86);
+    }
+
+    .layer strong {
+      color: var(--carbon);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+      font-size: 26px;
+      line-height: 1;
+    }
+
+    .layer span {
+      color: var(--ash);
+      font-size: 13px;
+      line-height: 1.48;
+    }
+
+    .bullets {
+      display: grid;
+      gap: 12px;
+      margin: 26px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .bullets li {
+      position: relative;
+      padding-left: 28px;
+      color: var(--carbon);
+      font-weight: 400;
+    }
+
+    .bullets li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .7em;
+      width: 11px;
+      height: 11px;
+      border: 2px solid var(--signal-blue);
+      border-radius: 980px;
+      background: var(--white);
+    }
+
+    .specs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .spec-card {
+      min-height: 148px;
+      padding: 20px;
+    }
+
+    .spec-card strong {
+      display: block;
+      color: var(--carbon);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+      font-size: clamp(24px, 2.7vw, 34px);
+      line-height: 1.04;
+    }
+
+    .spec-card span {
+      display: block;
+      margin-top: 12px;
+      color: var(--ash);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .clinical-band {
+      display: grid;
+      grid-template-columns: minmax(0, .74fr) minmax(300px, .5fr);
+      gap: 64px;
+      align-items: stretch;
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, .98), rgba(244, 248, 251, .94));
+      box-shadow: none;
+    }
+
+    .feature-banner {
+      position: relative;
+      min-height: 560px;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(0, 0, 0, .84), rgba(0, 0, 0, .34)),
+        url("assets/effective-lifting-hifu.jpg") center right / min(56vw, 720px) no-repeat,
+        var(--onyx);
+      color: var(--frost);
+    }
+
+    .feature-banner__inner {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+      padding: 64px 0;
+    }
+
+    .feature-banner__content {
+      max-width: 660px;
+    }
+
+    .feature-banner .section-label,
+    .feature-banner h2,
+    .feature-banner .body-text,
+    .feature-banner .bullets li {
+      color: var(--frost);
+    }
+
+    .feature-banner .kicker::before,
+    .feature-banner .bullets li::before {
+      border-color: var(--signal-blue);
+      background: transparent;
+    }
+
+    .feature-banner .warning {
+      max-width: 660px;
+      border-color: rgba(245, 245, 247, .18);
+      background: rgba(244, 248, 251, .08);
+      color: var(--frost);
+      backdrop-filter: blur(12px);
+    }
+
+    .feature-banner .ghost-link {
+      display: inline-flex;
+      margin-top: 24px;
+      color: var(--frost);
+    }
+
+    .clinical-band img {
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .warning {
+      margin-top: 22px;
+      padding: 18px 20px;
+      background: var(--ice);
+      color: var(--carbon);
+      font-size: 13px;
+      line-height: 1.62;
+    }
+
+    .type-cta {
+      padding: 64px 0;
+      border-top: 1px solid var(--line);
+      background: var(--frost);
+    }
+
+    .type-cta__inner {
+      width: min(920px, calc(100% - 48px));
+      margin: 0 auto;
+      display: grid;
+      justify-items: center;
+      gap: 12px;
+      text-align: center;
+    }
+
+    .type-cta__name {
+      color: var(--carbon);
+      font-size: clamp(40px, 6vw, 56px);
+      font-weight: 600;
+      line-height: 1.07;
+    }
+
+    .type-cta__descriptor {
+      color: var(--smoke);
+      font-size: 21px;
+      font-weight: 300;
+      line-height: 1.24;
+    }
+
+    .type-cta__variant {
+      color: var(--signal-blue);
+      font-size: 28px;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.18;
+    }
+
+    .type-cta__actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .capture-form {
+      display: grid;
+      grid-template-columns: minmax(220px, 360px) auto;
+      gap: 12px;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .form-input {
+      width: 100%;
+      min-height: 44px;
+      padding: 0 14px;
+      border: 1px solid var(--hairline);
+      border-radius: 8px;
+      background: var(--frost);
+      color: var(--carbon);
+      font: inherit;
+      font-size: 17px;
+      line-height: 1.29;
+    }
+
+    .form-input::placeholder {
+      color: var(--ash);
+    }
+
+    .form-input:focus {
+      border-color: var(--apple-blue);
+      outline: 2px solid var(--apple-blue);
+      outline-offset: 2px;
+    }
+
+    .cta {
+      padding: 64px 0;
+      border-top: 1px solid var(--hairline);
+      background: var(--frost);
+    }
+
+    .cta__inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+      gap: 42px;
+      align-items: end;
+    }
+
+    .cta h2 {
+      max-width: 760px;
+    }
+
+    .cta p {
+      max-width: 660px;
+      margin-top: 18px;
+      color: var(--ash);
+      font-size: 17px;
+      line-height: 1.47;
+    }
+
+    .cta__panel {
+      padding: 26px;
+      border: 1px solid var(--mist);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .9);
+      box-shadow: none;
+    }
+
+    .cta__phone {
+      display: block;
+      margin-bottom: 18px;
+      color: var(--link-blue);
+      font-size: 26px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .footer {
+      padding: 42px 0 28px;
+      border-top: 1px solid var(--hairline);
+      background: var(--frost);
+      color: var(--ash);
+      font-size: 12px;
+    }
+
+    .footer__inner {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .footer__directory {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .footer__column {
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer__column strong {
+      color: var(--carbon);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .footer__column a {
+      color: var(--ash);
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    .footer__legal {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding-top: 18px;
+    }
+
+    .source-link {
+      color: var(--link-blue);
+      font-weight: 400;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+
+    @media (max-width: 1020px) {
+      .global-nav__links {
+        display: none;
+      }
+
+      .section-head,
+      .split,
+      .clinical-band,
+      .cta__inner {
+        grid-template-columns: 1fr;
+      }
+
+      .proof-grid,
+      .audience-grid,
+      .support-grid,
+      .service-card-grid,
+      .photo-card-grid,
+      .specs {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .product-stage {
+        min-height: 500px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .wrap,
+      .global-nav__inner,
+      .mini-nav__inner,
+      .hero__inner,
+      .cta__inner {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .global-nav__brand {
+        min-width: auto;
+      }
+
+      .global-nav__tools {
+        min-width: auto;
+      }
+
+      .mini-nav {
+        top: 41px;
+      }
+
+      .mini-nav__links a:not(.mini-nav__phone) {
+        display: none;
+      }
+
+      .mini-nav__title {
+        font-size: 18px;
+      }
+
+      .mini-nav__phone {
+        font-size: 13px;
+      }
+
+      .hero,
+      .section,
+      .cta {
+        padding-top: 56px;
+        padding-bottom: 58px;
+      }
+
+      h1 {
+        font-size: clamp(35px, 10vw, 48px);
+      }
+
+      h2 {
+        font-size: clamp(28px, 8vw, 38px);
+      }
+
+      .hero__actions,
+      .button,
+      .type-cta__actions,
+      .capture-form {
+        width: 100%;
+      }
+
+      .trust-strip,
+      .proof-grid,
+      .audience-grid,
+      .support-grid,
+      .service-card-grid,
+      .photo-card-grid,
+      .specs {
+        grid-template-columns: 1fr;
+      }
+
+      .product-stage {
+        min-height: 430px;
+        padding: 20px;
+      }
+
+      .sonic-map {
+        width: 190px;
+        inset: 26px 20px auto auto;
+      }
+
+      .product-photo {
+        width: 94%;
+        margin-top: 0;
+        margin-bottom: 96px;
+      }
+
+      .doc-card {
+        left: 14px;
+        bottom: 14px;
+        width: calc(100% - 28px);
+        grid-template-columns: 64px 1fr;
+      }
+
+      .doc-card img {
+        width: 64px;
+        height: 82px;
+      }
+
+      .layer-stack,
+      .clinical-band,
+      .feature-banner__inner {
+        padding: 18px;
+      }
+
+      .feature-banner {
+        min-height: 620px;
+        background:
+          linear-gradient(180deg, rgba(0, 0, 0, .82), rgba(0, 0, 0, .42)),
+          url("assets/effective-lifting-hifu.jpg") center bottom 32px / 320px no-repeat,
+          var(--onyx);
+      }
+
+      .layer {
+        grid-template-columns: 60px 1fr;
+      }
+
+      .cta__phone {
+        font-size: 22px;
+      }
+
+      .photo-card-grid {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(260px, 82vw);
+        grid-template-columns: none;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        scroll-snap-type: x mandatory;
+      }
+
+      .media-card {
+        scroll-snap-align: start;
+      }
+
+      .footer__inner,
+      .type-cta__inner {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .footer__directory {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .capture-form {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav class="global-nav" aria-label="Глобальная навигация">
+      <div class="global-nav__inner">
+        <a class="global-nav__brand" href="#top" aria-label="Beauty Instrument">BI</a>
+        <div class="global-nav__links" aria-label="Категории">
+          <a href="#ru">Medical</a>
+          <a href="#technology">HIFU</a>
+          <a href="#specs">Specs</a>
+          <a href="#consult">Support</a>
+        </div>
+        <div class="global-nav__tools" aria-label="Инструменты">
+          <a class="global-nav__icon" href="#specs" aria-label="Поиск">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="6"></circle>
+              <path d="m16 16 4 4"></path>
+            </svg>
+          </a>
+          <a class="global-nav__icon" href="#consult" aria-label="Заявка">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 9h10l-1 11H8L7 9Z"></path>
+              <path d="M9 9a3 3 0 0 1 6 0"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="mini-nav" aria-label="Навигация по продукту">
+      <div class="mini-nav__inner">
+        <a class="mini-nav__title" href="#top">
+          Effective <span class="wordmark">Lifting</span>
+        </a>
+        <div class="mini-nav__links" aria-label="Разделы страницы">
+          <a href="#ru">РУ</a>
+          <a href="#technology">Технология</a>
+          <a href="#specs">Характеристики</a>
+          <a class="mini-nav__phone" href="tel:88006003890">8 800 600 38 90</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero" id="top">
+      <div class="hero__inner">
+        <div class="hero__content">
+          <span class="kicker">3D HIFU SMAS с регистрационным удостоверением</span>
+          <h1>Effective Lifting HIFU</h1>
+          <p class="hero__lead">Ультразвуковой аппарат Beauty Instrument для лица, шеи и тела: 7 картриджей, 11 линий излучения, обучение, документы и сервисное сопровождение.</p>
+          <div class="hero__actions">
+            <a class="button" href="#consult">Получить предложение</a>
+            <a class="button button--ghost" href="#ru">Проверить РУ</a>
+          </div>
+        </div>
+
+        <div class="product-stage" aria-label="Аппарат Effective Lifting и регистрационное удостоверение">
+          <div class="sonic-map" aria-hidden="true"></div>
+          <figure class="product-photo">
+            <img src="assets/effective-lifting-hifu.jpg" alt="Аппарат Effective Lifting 3D HIFU SMAS">
+          </figure>
+          <a class="doc-card" href="https://elk.roszdravnadzor.gov.ru/widget/med-product/162965" target="_blank" rel="noopener">
+            <img src="https://kosmetik.com.ru/thumb/2/ZJdSdsWeZmvbhOqogQzdDg/580r450/d/ru_effective_lifting-1.png" alt="Скан регистрационного удостоверения Effective Lifting">
+            <span>
+              <strong>Документ Росздравнадзора</strong>
+              <span>Открыть скан РУ на аппарат Effective Lifting, модель HIFU</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="trust-strip" aria-label="Ключевые факты об аппарате">
+          <div class="trust-item">
+            <strong>РЗН 2021/13533</strong>
+            <span>регистрационное удостоверение на медицинское изделие</span>
+          </div>
+          <div class="trust-item">
+            <strong>7</strong>
+            <span>картриджей для лица, шеи и тела в товарной карточке</span>
+          </div>
+          <div class="trust-item">
+            <strong>11</strong>
+            <span>линий излучения на манипуле по описанию 3D HIFU</span>
+          </div>
+          <div class="trust-item">
+            <strong>997 500 ₽</strong>
+            <span>цена на карточке на 04.07.2026 при наличном расчете</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section section--soft" id="ru">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <span class="section-label">Юридическая опора</span>
+              <h2>РУ - главный аргумент для клиники и медицинского кабинета</h2>
+            </div>
+            <p>Аппарат внесён в реестр как медицинское изделие: «Аппарат для ультразвукового SMAS лифтинга Beauty Instrument "Effective Lifting", модель HIFU».</p>
+          </div>
+
+          <div class="proof-grid service-card-grid">
+            <article class="proof-card">
+              <strong>Документ для проверок и внутреннего контроля</strong>
+              <span>Регистрационное удостоверение помогает клинике подтвердить происхождение и статус оборудования в закупке, учёте и документообороте.</span>
+            </article>
+            <article class="proof-card">
+              <strong>Официальное наименование изделия</strong>
+              <span>Формулировку можно использовать в КП, карточке оборудования, договоре поставки и перечне оснащения кабинета.</span>
+            </article>
+            <article class="proof-card">
+              <strong>Комплектность указана в РУ</strong>
+              <span>В составе указаны основной блок, манипула, держатель, кабель питания, руководство и картриджи для лица, шеи и тела.</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <span class="section-label">Для кого</span>
+              <h2>Аппарат под задачи клиник, косметологий и премиальных кабинетов</h2>
+            </div>
+            <p>Effective Lifting стоит выводить не как ещё один аппарат в прайсе, а как медицинскую HIFU-позицию с понятной документацией и протоколами.</p>
+          </div>
+
+          <div class="photo-card-grid" aria-label="Сценарии внедрения Effective Lifting">
+            <article class="media-card" style="--media-image: url('assets/effective-lifting-hifu.jpg');">
+              <span class="media-card__label">Clinic</span>
+              <div class="media-card__bottom">
+                <h3 class="media-card__title">Документированный HIFU для медицинского центра</h3>
+                <a class="media-card__button" href="#ru">Смотреть</a>
+              </div>
+            </article>
+            <article class="media-card" style="--media-image: url('assets/effective-lifting-hifu.jpg');">
+              <span class="media-card__label">Premium cosmetology</span>
+              <div class="media-card__bottom">
+                <h3 class="media-card__title">Лифтинг-позиция для высокого среднего чека</h3>
+                <a class="media-card__button" href="#technology">Изучить</a>
+              </div>
+            </article>
+            <article class="media-card" style="--media-image: url('https://kosmetik.com.ru/thumb/2/ZJdSdsWeZmvbhOqogQzdDg/580r450/d/ru_effective_lifting-1.png');">
+              <span class="media-card__label">Medical documents</span>
+              <div class="media-card__bottom">
+                <h3 class="media-card__title">Регистрационное удостоверение как точка доверия</h3>
+                <a class="media-card__button" href="https://elk.roszdravnadzor.gov.ru/widget/med-product/162965" target="_blank" rel="noopener">Открыть</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--soft" id="technology">
+        <div class="wrap split">
+          <div>
+            <span class="section-label">Технология</span>
+            <h2>Фокусированный ультразвук работает на заданной глубине</h2>
+            <p class="body-text">HIFU-нагрев направляется в выбранный слой ткани, не требуя повреждения поверхности кожи. Для специалиста это даёт управляемость: зона, глубина, энергия, ширина и шаг воздействия подбираются под протокол.</p>
+            <ul class="bullets">
+              <li>Картриджи для лица и шеи: 1,5 мм, 3,0 мм, 4,5 мм</li>
+              <li>Картриджи для тела: 6,0 мм, 10 мм, 13 мм, 16 мм</li>
+              <li>Манипула поддерживает регулировку от 1 до 11 линий</li>
+              <li>Регулировка энергии от 0,2 до 7 Дж с шагом 0,2 Дж</li>
+              <li>Ресурс картриджа: 10 000 линий</li>
+            </ul>
+          </div>
+
+          <div class="layer-stack" aria-label="Глубины воздействия картриджей">
+            <div class="layer">
+              <strong>1,5</strong>
+              <span>мм - поверхностные зоны лица и шеи</span>
+            </div>
+            <div class="layer">
+              <strong>3,0</strong>
+              <span>мм - дермальный слой для протоколов по лицу</span>
+            </div>
+            <div class="layer">
+              <strong>4,5</strong>
+              <span>мм - зона SMAS в протоколах лифтинга</span>
+            </div>
+            <div class="layer">
+              <strong>6-16</strong>
+              <span>мм - картриджи для тела, живота, бедер, ягодиц и спины</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="specs">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <span class="section-label">Характеристики</span>
+              <h2>Данные, которые нужны собственнику и специалисту</h2>
+            </div>
+            <p>Собрали ключевые параметры для первого коммерческого предложения. Перед публикацией в рекламе финальные формулировки лучше сверить с паспортом изделия и юристом.</p>
+          </div>
+
+          <div class="specs" aria-label="Технические характеристики Effective Lifting">
+            <div class="spec-card">
+              <strong>15"</strong>
+              <span>диагональ экрана</span>
+            </div>
+            <div class="spec-card">
+              <strong>4 MHz</strong>
+              <span>рабочая частота</span>
+            </div>
+            <div class="spec-card">
+              <strong>100 Вт</strong>
+              <span>максимальная мощность</span>
+            </div>
+            <div class="spec-card">
+              <strong>0,2-7 Дж</strong>
+              <span>энергия воздействия, шаг 0,2 Дж</span>
+            </div>
+            <div class="spec-card">
+              <strong>10 000</strong>
+              <span>линий на каждый картридж</span>
+            </div>
+            <div class="spec-card">
+              <strong>10 кг</strong>
+              <span>вес аппарата</span>
+            </div>
+            <div class="spec-card">
+              <strong>ABS</strong>
+              <span>материал корпуса</span>
+            </div>
+            <div class="spec-card">
+              <strong>0-10 мм</strong>
+              <span>ширина зоны воздействия, шаг 1 мм</span>
+            </div>
+            <div class="spec-card">
+              <strong>5-25 мм</strong>
+              <span>длина зоны воздействия, шаг 1 мм</span>
+            </div>
+            <div class="spec-card">
+              <strong>1-5 мм</strong>
+              <span>интервал шага, настройка 0,1 мм</span>
+            </div>
+            <div class="spec-card">
+              <strong>20-23°C</strong>
+              <span>рекомендуемая температура помещения</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-banner">
+        <div class="feature-banner__inner">
+          <div class="feature-banner__content">
+            <span class="section-label">Запуск услуги</span>
+            <h2>Внедрите HIFU как понятную медицинскую услугу</h2>
+            <p class="body-text">Beauty Instrument помогает не просто поставить аппарат, а подготовить документы, обучение, сервисную поддержку и упаковку процедуры для администратора, врача и пациента.</p>
+            <ul class="bullets">
+              <li>Обучение работе с аппаратом и базовым протоколам</li>
+              <li>Поддержка по документам и комплектности</li>
+              <li>Гарантия до 2 лет, сервис и консультации после покупки</li>
+              <li>Помощь с упаковкой услуги для прайса и отдела продаж</li>
+            </ul>
+            <a class="ghost-link" href="#consult">Запросить внедрение</a>
+            <div class="warning">Важно: страница не заменяет медицинскую консультацию и инструкцию производителя. Показания, противопоказания и параметры процедуры определяет квалифицированный специалист по утверждённым документам.</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="type-cta" id="consult">
+      <div class="type-cta__inner">
+        <div class="type-cta__name">Effective Lifting</div>
+        <div class="type-cta__descriptor">HIFU SMAS с регистрационным удостоверением</div>
+        <div class="type-cta__variant">7 картриджей</div>
+        <div class="capture-form" aria-label="Запрос коммерческого предложения">
+          <input class="form-input" type="tel" inputmode="tel" autocomplete="tel" placeholder="Телефон для КП">
+          <a class="button button--ghost" href="tel:88006003890">Запросить КП</a>
+        </div>
+        <div class="type-cta__actions">
+          <a class="button" href="tel:88006003890">Связаться с менеджером</a>
+          <a class="button button--ghost" href="https://elk.roszdravnadzor.gov.ru/widget/med-product/162965" target="_blank" rel="noopener">Проверить РУ</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__directory" aria-label="Ссылки сайта">
+          <div class="footer__column">
+            <strong>Продукт</strong>
+            <a href="#top">Effective Lifting</a>
+            <a href="https://beautyinstrument.ru/catalog/apparat-3d-hifu-7-kartridzhey/" target="_blank" rel="noopener">Карточка товара</a>
+            <a href="#technology">Технология HIFU</a>
+            <a href="#specs">Характеристики</a>
+          </div>
+          <div class="footer__column">
+            <strong>Документы</strong>
+            <a href="#ru">Регистрационное удостоверение</a>
+            <a href="https://elk.roszdravnadzor.gov.ru/widget/med-product/162965" target="_blank" rel="noopener">Реестр Росздравнадзора</a>
+            <a href="#consult">Запросить КП</a>
+          </div>
+          <div class="footer__column">
+            <strong>Сервис</strong>
+            <a href="#consult">Обучение</a>
+            <a href="#consult">Сопровождение</a>
+            <a href="#consult">Расходники</a>
+          </div>
+          <div class="footer__column">
+            <strong>Beauty Instrument</strong>
+            <a href="tel:88006003890">8 800 600 38 90</a>
+            <a href="#consult">Поставка</a>
+            <a href="#consult">Консультация</a>
+          </div>
+        </div>
+        <div class="footer__legal">
+          <span>Beauty Instrument - Effective Lifting HIFU</span>
+          <span>Информация не заменяет инструкцию производителя и медицинскую консультацию.</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
