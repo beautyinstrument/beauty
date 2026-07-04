@@ -224,6 +224,43 @@
       line-height: 1.7;
     }
 
+    .hero-help {
+      max-width: 820px;
+      margin: 28px 0 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: hero-help;
+      display: grid;
+      gap: 18px;
+    }
+
+    .hero-help li {
+      counter-increment: hero-help;
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 16px;
+      align-items: start;
+      color: var(--text);
+      font-size: clamp(18px, 1.8vw, 24px);
+      line-height: 1.35;
+      font-weight: 800;
+    }
+
+    .hero-help li::before {
+      content: counter(hero-help);
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink), var(--blue));
+      color: #fff;
+      box-shadow: 0 10px 22px rgba(32, 119, 212, .18);
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
     .hero__actions {
       display: flex;
       align-items: center;
@@ -794,6 +831,22 @@
         font-size: clamp(28px, 8vw, 38px);
       }
 
+      .hero-help {
+        gap: 14px;
+      }
+
+      .hero-help li {
+        grid-template-columns: 36px 1fr;
+        gap: 12px;
+        font-size: 17px;
+      }
+
+      .hero-help li::before {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+      }
+
       .hero__stats,
       .why-grid,
       .direction__metrics,
@@ -852,6 +905,13 @@
         <div>
           <span class="kicker">Запуск под ключ</span>
           <h1>Откройте кабинет аппаратной косметологии - самая простая и доступная ниша в бьюти</h1>
+          <ol class="hero-help" aria-label="Что мы поможем сделать">
+            <li>Подобрать направление и аппараты для старта</li>
+            <li>Собрать комплексы процедур</li>
+            <li>Научим эффективно проводить процедуры вас и ваш коллектив</li>
+            <li>Дадим базу знаний для привлечения клиентов</li>
+            <li>Дадим гарантию до 2 лет и комплект документов для легальной работы без медицинского образования и лицензии</li>
+          </ol>
           <div class="hero__actions">
             <a class="button" href="#consult">Получить консультацию</a>
             <p class="hero__note">На консультации разберём бюджет, помещение и направление, которое быстрее выйдет на плановую загрузку.</p>
