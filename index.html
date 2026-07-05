@@ -7,7 +7,7 @@
   <title>Запуск кабинета аппаратной косметологии | Beauty Instrument</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600;700;800&family=Literata:opsz,wght@7..72,500;7..72,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600;700&family=Literata:opsz,wght@7..72,600;7..72,700&display=swap" rel="stylesheet">
   <style>
     :root {
       --text: #17202a;
@@ -38,8 +38,21 @@
       color: var(--text);
       background: var(--pearl);
       font-family: "Commissioner", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.55;
+      font-size: 16px;
+      line-height: 1.6;
       text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* All numeric/stat values use the sans with lining tabular figures,
+       never the serif — keeps data blocks calm and aligned. */
+    .hero__stat strong,
+    .why-card strong,
+    .metric strong,
+    .model-cell strong {
+      font-family: "Commissioner", system-ui, sans-serif;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.01em;
     }
 
     body::before {
@@ -103,7 +116,7 @@
     .brand {
       display: grid;
       gap: 2px;
-      font-weight: 800;
+      font-weight: 700;
       letter-spacing: .08em;
       text-transform: uppercase;
       font-size: 13px;
@@ -128,7 +141,7 @@
 
     .nav__phone {
       color: var(--blue);
-      font-weight: 800;
+      font-weight: 700;
       white-space: nowrap;
     }
 
@@ -143,8 +156,9 @@
       background: linear-gradient(135deg, var(--pink), var(--pink-deep));
       color: #fff;
       box-shadow: 0 18px 38px rgba(233, 30, 143, .22);
-      font-size: 14px;
-      font-weight: 800;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: .01em;
       cursor: pointer;
       transition: transform .2s ease, box-shadow .2s ease;
     }
@@ -192,7 +206,7 @@
       background: rgba(233, 30, 143, .07);
       color: var(--pink-deep);
       font-size: 12px;
-      font-weight: 800;
+      font-weight: 700;
       letter-spacing: .08em;
       text-transform: uppercase;
     }
@@ -207,57 +221,67 @@
     }
 
     h1 {
-      max-width: 780px;
-      margin-top: 22px;
+      max-width: 720px;
+      margin-top: 20px;
       font-family: "Literata", Georgia, serif;
-      font-size: clamp(38px, 5vw, 64px);
-      line-height: 1.08;
+      font-size: clamp(30px, 3.6vw, 46px);
+      line-height: 1.14;
       font-weight: 600;
-      letter-spacing: 0;
+      letter-spacing: -0.005em;
     }
 
     .hero__lead {
-      max-width: 650px;
-      margin-top: 22px;
+      max-width: 620px;
+      margin-top: 18px;
       color: var(--muted);
-      font-size: clamp(17px, 1.6vw, 20px);
-      line-height: 1.7;
+      font-size: clamp(16px, 1.3vw, 18px);
+      line-height: 1.65;
+    }
+
+    .hero-help__title {
+      margin: 26px 0 4px;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
     }
 
     .hero-help {
-      max-width: 820px;
-      margin: 28px 0 0;
+      max-width: 620px;
+      margin: 0;
       padding: 0;
       list-style: none;
       counter-reset: hero-help;
       display: grid;
-      gap: 18px;
+      gap: 12px;
     }
 
     .hero-help li {
       counter-increment: hero-help;
       display: grid;
-      grid-template-columns: 42px 1fr;
-      gap: 16px;
+      grid-template-columns: 28px 1fr;
+      gap: 14px;
       align-items: start;
       color: var(--text);
-      font-size: clamp(18px, 1.8vw, 24px);
-      line-height: 1.35;
-      font-weight: 800;
+      font-size: 16px;
+      line-height: 1.5;
+      font-weight: 500;
     }
 
     .hero-help li::before {
       content: counter(hero-help);
       display: grid;
       place-items: center;
-      width: 42px;
-      height: 42px;
+      width: 26px;
+      height: 26px;
+      margin-top: 1px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--pink), var(--blue));
       color: #fff;
-      box-shadow: 0 10px 22px rgba(32, 119, 212, .18);
-      font-size: 16px;
-      font-weight: 800;
+      box-shadow: 0 8px 16px rgba(32, 119, 212, .16);
+      font-size: 13px;
+      font-weight: 700;
       line-height: 1;
     }
 
@@ -300,17 +324,17 @@
     .hero__stat strong {
       display: block;
       color: var(--blue);
-      font-family: "Literata", Georgia, serif;
-      font-size: clamp(25px, 3vw, 36px);
-      line-height: 1.05;
-      font-weight: 600;
+      font-size: clamp(22px, 2.4vw, 27px);
+      line-height: 1.1;
+      font-weight: 700;
     }
 
     .hero__stat span {
       display: block;
-      margin-top: 10px;
+      margin-top: 8px;
       color: var(--muted);
       font-size: 13px;
+      line-height: 1.4;
     }
 
     .photo-board {
@@ -382,24 +406,24 @@
       margin-bottom: 12px;
       color: var(--pink-deep);
       font-size: 12px;
-      font-weight: 800;
+      font-weight: 700;
       letter-spacing: .1em;
       text-transform: uppercase;
     }
 
     h2 {
       font-family: "Literata", Georgia, serif;
-      font-size: clamp(30px, 4vw, 46px);
-      line-height: 1.12;
+      font-size: clamp(25px, 3vw, 34px);
+      line-height: 1.16;
       font-weight: 600;
-      letter-spacing: 0;
+      letter-spacing: -0.005em;
     }
 
     h3 {
-      margin-top: 14px;
+      margin-top: 12px;
       font-family: "Literata", Georgia, serif;
-      font-size: clamp(25px, 3vw, 34px);
-      line-height: 1.16;
+      font-size: clamp(19px, 2vw, 23px);
+      line-height: 1.25;
       font-weight: 600;
       letter-spacing: 0;
     }
@@ -408,7 +432,7 @@
     .direction__text {
       color: var(--muted);
       font-size: 16px;
-      line-height: 1.7;
+      line-height: 1.65;
     }
 
     .why-grid {
@@ -418,26 +442,25 @@
     }
 
     .why-card {
-      min-height: 205px;
-      padding: 24px 20px;
+      min-height: 150px;
+      padding: 22px 20px;
       border-radius: var(--radius);
     }
 
     .why-card strong {
       display: block;
-      min-height: 54px;
       color: var(--blue);
-      font-family: "Literata", Georgia, serif;
-      font-size: 28px;
-      line-height: 1.08;
-      font-weight: 600;
+      font-size: 19px;
+      line-height: 1.2;
+      font-weight: 700;
     }
 
     .why-card span {
       display: block;
-      margin-top: 18px;
+      margin-top: 12px;
       color: var(--muted);
       font-size: 14px;
+      line-height: 1.5;
     }
 
     .directions {
@@ -483,7 +506,7 @@
       background: var(--blue-soft);
       color: var(--blue);
       font-size: 12px;
-      font-weight: 800;
+      font-weight: 700;
       letter-spacing: .08em;
       text-transform: uppercase;
     }
@@ -507,8 +530,9 @@
     .metric strong {
       display: block;
       color: var(--pink-deep);
-      font-size: 22px;
-      line-height: 1.12;
+      font-size: 18px;
+      line-height: 1.2;
+      font-weight: 700;
     }
 
     .metric span {
@@ -516,6 +540,7 @@
       margin-top: 6px;
       color: var(--muted);
       font-size: 12px;
+      line-height: 1.4;
     }
 
     .direction__details {
@@ -551,7 +576,9 @@
       position: relative;
       padding-left: 26px;
       color: var(--text);
-      font-weight: 650;
+      font-size: 15px;
+      line-height: 1.5;
+      font-weight: 500;
     }
 
     .benefits li::before {
@@ -600,25 +627,25 @@
     }
 
     .model-cell {
-      min-height: 176px;
-      padding: 26px;
+      min-height: 132px;
+      padding: 24px;
       border-radius: var(--radius);
     }
 
     .model-cell strong {
       display: block;
       color: var(--blue);
-      font-family: "Literata", Georgia, serif;
-      font-size: clamp(32px, 4vw, 48px);
-      line-height: 1.02;
-      font-weight: 600;
+      font-size: clamp(24px, 2.6vw, 30px);
+      line-height: 1.1;
+      font-weight: 700;
     }
 
     .model-cell span {
       display: block;
-      margin-top: 14px;
+      margin-top: 10px;
       color: var(--muted);
       font-size: 14px;
+      line-height: 1.45;
     }
 
     .support-card {
@@ -632,7 +659,7 @@
     .support-card h3 {
       margin: 0;
       color: var(--text);
-      font-size: clamp(26px, 3vw, 34px);
+      font-size: clamp(20px, 2.2vw, 25px);
     }
 
     .support-card p {
@@ -666,7 +693,7 @@
       background: #fff;
       color: var(--blue);
       font-size: 13px;
-      font-weight: 800;
+      font-weight: 700;
       box-shadow: inset 0 0 0 1px rgba(32, 119, 212, .12);
     }
 
@@ -682,11 +709,13 @@
     .help-list li {
       counter-increment: help;
       display: grid;
-      grid-template-columns: 34px 1fr;
+      grid-template-columns: 30px 1fr;
       gap: 12px;
       align-items: start;
       color: var(--text);
-      font-weight: 650;
+      font-size: 15px;
+      line-height: 1.5;
+      font-weight: 500;
     }
 
     .help-list li::before {
@@ -699,7 +728,7 @@
       background: linear-gradient(135deg, var(--pink), var(--blue));
       color: #fff;
       font-size: 13px;
-      font-weight: 800;
+      font-weight: 700;
       line-height: 1;
     }
 
@@ -741,7 +770,7 @@
       margin-bottom: 18px;
       color: var(--blue);
       font-size: 26px;
-      font-weight: 800;
+      font-weight: 700;
       white-space: nowrap;
     }
 
@@ -820,27 +849,27 @@
       }
 
       h1 {
-        font-size: clamp(34px, 10vw, 46px);
+        font-size: clamp(26px, 7vw, 34px);
       }
 
       h2 {
-        font-size: clamp(28px, 8vw, 38px);
+        font-size: clamp(23px, 6vw, 30px);
       }
 
       .hero-help {
-        gap: 14px;
+        gap: 12px;
       }
 
       .hero-help li {
-        grid-template-columns: 36px 1fr;
+        grid-template-columns: 26px 1fr;
         gap: 12px;
-        font-size: 17px;
+        font-size: 15px;
       }
 
       .hero-help li::before {
-        width: 36px;
-        height: 36px;
-        font-size: 14px;
+        width: 26px;
+        height: 26px;
+        font-size: 13px;
       }
 
       .hero__stats,
@@ -896,13 +925,14 @@
       <div class="hero__inner">
         <div>
           <span class="kicker">Запуск под ключ</span>
-          <h1>Откройте кабинет аппаратной косметологии - самая простая и доступная ниша в бьюти</h1>
-          <ol class="hero-help" aria-label="Что мы поможем сделать">
+          <h1>Кабинет аппаратной косметологии под ключ — одна из самых доступных ниш в бьюти</h1>
+          <p class="hero-help__title">Поможем на каждом шаге</p>
+          <ol class="hero-help" aria-label="Что мы берём на себя">
             <li>Подобрать направление и аппараты для старта</li>
-            <li>Собрать комплексы процедур</li>
-            <li>Научим эффективно проводить процедуры вас и ваш коллектив</li>
-            <li>Дадим базу знаний для привлечения клиентов</li>
-            <li>Дадим гарантию до 2 лет и комплект документов для легальной работы без медицинского образования и лицензии</li>
+            <li>Собрать комплексы процедур под спрос</li>
+            <li>Обучить вас и команду проводить процедуры</li>
+            <li>Дать базу знаний для привлечения клиентов</li>
+            <li>Оформить документы для легальной работы без медобразования и лицензии — с гарантией до 2 лет</li>
           </ol>
           <div class="hero__actions">
             <a class="button" href="#consult">Получить консультацию</a>
@@ -1153,16 +1183,16 @@
       <section class="section">
         <div class="wrap model">
           <div class="support-card">
-            <h3>Мы поможем:</h3>
+            <h3>Что берём на себя</h3>
             <div class="support-photo">
               <img src="https://optim.tildacdn.com/tild6238-6232-4338-b532-313236636166/-/resize/480x360/-/format/webp/noroot.png.webp" alt="Аппарат Beauty Instrument в кабинете">
             </div>
             <ol class="help-list">
               <li>Подобрать направление и аппараты для старта</li>
-              <li>Собрать комплексы процедур</li>
-              <li>Научим эффективно проводить процедуры вас и ваш коллектив</li>
-              <li>Дадим базу знаний для привлечения клиентов</li>
-              <li>Дадим гарантию до 2 лет и комплект документов для легальной работы без медицинского образования и лицензии</li>
+              <li>Собрать комплексы процедур под спрос</li>
+              <li>Обучить вас и команду проводить процедуры</li>
+              <li>Дать базу знаний для привлечения клиентов</li>
+              <li>Оформить документы для легальной работы без медобразования и лицензии — с гарантией до 2 лет</li>
             </ol>
           </div>
           <div>
@@ -1178,8 +1208,8 @@
       <div class="cta__inner">
         <div>
           <span class="kicker">Бесплатная консультация</span>
-          <h2>Разберите свой запуск с экспертом Beauty Instrument</h2>
-          <p>Чтобы начать - напишите ваш контактный номер телефона, бюджет и город. Подберём формат кабинета, посчитаем стартовый набор оборудования и покажем, как выйти на первую выручку без лишних расходов.</p>
+          <h2>Разберём ваш запуск с экспертом Beauty Instrument</h2>
+          <p>Чтобы начать, оставьте контактный номер, бюджет и город. Подберём формат кабинета, посчитаем стартовый набор оборудования и покажем, как выйти на первую выручку без лишних расходов.</p>
         </div>
         <div class="cta__panel">
           <a class="cta__phone" href="tel:88006003890">8 800 600 38 90</a>
