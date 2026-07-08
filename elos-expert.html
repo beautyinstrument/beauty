@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elos Expert — элос-эпиляция и омоложение | Бьюти Инструмент</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;800&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFF7FA;
+  --paper-2:#FFEDF4;
+  --ink:#1A0713;
+  --ink-soft:#6A4557;
+  --fuchsia:#FF0F80;
+  --fuchsia-ink:#D1005F;
+  --violet:#5B1FEF;
+  --rule:rgba(26,7,19,.12);
+  --rule-soft:rgba(26,7,19,.07);
+  --stop:#2E8BFF;
+  --wrap:1180px;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --disp:"Unbounded","Manrope",system-ui,sans-serif;
+  --body:"Manrope",system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img{max-width:100%;display:block}
+::selection{background:var(--fuchsia);color:#fff}
+:focus-visible{outline:2px solid var(--fuchsia);outline-offset:3px;border-radius:2px}
+
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.band{padding:clamp(60px,8vw,120px) 0;position:relative}
+.band + .band{border-top:1px solid var(--rule)}
+
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--fuchsia-ink);display:flex;align-items:center;gap:12px;margin-bottom:26px}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--fuchsia);flex:none}
+
+h1,h2,h3{font-family:var(--disp);font-weight:800;letter-spacing:-.035em;line-height:1}
+h2{font-size:clamp(29px,4.2vw,55px);margin-bottom:18px}
+h3{font-size:20px;letter-spacing:-.02em;line-height:1.15;font-weight:600}
+p{color:#3D1F30}
+.lead{font-size:clamp(17px,1.5vw,20px);max-width:62ch;color:#4A2A3B}
+.dim{color:var(--ink-soft)}
+
+/* header */
+.top{position:sticky;top:0;z-index:60;background:rgba(255,247,250,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--rule)}
+.top .wrap{display:flex;align-items:center;gap:20px;height:66px}
+.brand{font-family:var(--disp);font-weight:800;font-size:15px;letter-spacing:-.02em}
+.brand span{color:var(--fuchsia)}
+.top nav{margin-left:auto;display:flex;gap:26px;font-size:14px;color:var(--ink-soft)}
+.top nav a:hover{color:var(--ink)}
+.tel{font-family:var(--mono);font-size:14px;white-space:nowrap}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:15px;padding:15px 26px;border-radius:2px;border:1px solid transparent;cursor:pointer;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease,background .18s ease,color .18s ease}
+.btn-main{background:var(--fuchsia);color:#fff}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 14px 34px -14px var(--fuchsia)}
+.btn-ghost{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+.btn-sm{padding:11px 18px;font-size:14px}
+
+/* hero */
+.hero{padding-top:clamp(48px,6vw,86px);padding-bottom:0;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,4vw,64px);align-items:center}
+h1{font-size:clamp(40px,6.6vw,96px);letter-spacing:-.05em}
+h1 em{font-style:normal;color:var(--fuchsia);display:block}
+.hero-sub{margin-top:26px;max-width:46ch;font-size:clamp(16px,1.35vw,19px);color:#4A2A3B}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+
+/* main product shot */
+.shot{position:relative;background:var(--paper-2);border:1px solid var(--rule);overflow:hidden}
+.shot::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 60% at 50% 110%,rgba(255,15,128,.22),transparent 70%);pointer-events:none;z-index:1}
+.shot img{width:100%;height:clamp(340px,44vw,540px);object-fit:contain;padding:22px;position:relative;z-index:2;mix-blend-mode:multiply}
+.shot-tag{position:absolute;left:0;top:22px;z-index:3;background:var(--fuchsia);color:#fff;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:7px 14px}
+
+/* pulse */
+.pulse{margin-top:56px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:20px 0;position:relative;overflow:hidden}
+.pulse-track{display:flex;gap:4px;height:48px;align-items:flex-end}
+.pulse-track i{flex:1;background:linear-gradient(180deg,var(--fuchsia),rgba(91,31,239,.28));display:block;transform-origin:bottom;animation:flick 2.4s cubic-bezier(.4,0,.2,1) infinite}
+@keyframes flick{0%,100%{transform:scaleY(.12);opacity:.3}50%{transform:scaleY(1);opacity:1}}
+
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);margin-top:1px}
+.facts div{background:var(--paper);padding:26px 20px}
+.facts b{font-family:var(--mono);font-size:clamp(20px,2.4vw,30px);font-weight:700;display:block;letter-spacing:-.02em}
+.facts small{font-size:12px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.1em;font-family:var(--mono);display:block;margin-top:8px}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:1fr 300px;gap:clamp(20px,3vw,44px);margin-top:48px;align-items:start}
+.gal-main{background:var(--paper-2);border:1px solid var(--rule);position:relative;overflow:hidden}
+.gal-main img{width:100%;height:clamp(360px,48vw,600px);object-fit:contain;padding:26px;mix-blend-mode:multiply}
+.gal-count{position:absolute;right:16px;bottom:16px;font-family:var(--mono);font-size:12px;color:var(--ink-soft);background:var(--paper);padding:5px 10px;border:1px solid var(--rule)}
+.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.thumbs button{padding:0;border:1px solid var(--rule);background:var(--paper-2);cursor:pointer;aspect-ratio:3/4;overflow:hidden;transition:border-color .18s,transform .18s}
+.thumbs button img{width:100%;height:100%;object-fit:contain;padding:8px;mix-blend-mode:multiply}
+.thumbs button:hover{transform:translateY(-2px)}
+.thumbs button[aria-pressed="true"]{border-color:var(--fuchsia);box-shadow:inset 0 0 0 2px var(--fuchsia)}
+.gal-note{font-family:var(--mono);font-size:12px;color:var(--ink-soft);line-height:1.7;margin-top:16px}
+
+/* ruler */
+.ruler-shell{position:relative;border:1px solid var(--rule);padding:clamp(22px,3.4vw,44px);background:linear-gradient(180deg,color-mix(in srgb,var(--stop) 8%,var(--paper)),var(--paper));transition:background .5s ease}
+.scale{position:relative;height:126px;margin:44px 0 8px}
+.scale-line{position:absolute;left:0;right:0;top:62px;height:2px;background:linear-gradient(90deg,#2E8BFF,#3FCF6B,#FFC02E,#FF4B3E,#D62B3F,#3B0A24)}
+.stop{position:absolute;top:0;transform:translateX(-50%);background:none;border:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;padding:0;width:66px}
+.stop .nm{font-family:var(--mono);font-size:12px;color:var(--ink-soft);transition:color .2s}
+.stop .tick{width:1px;height:42px;background:var(--rule);margin-top:10px;transition:background .2s,height .2s}
+.stop .dot{width:13px;height:13px;border-radius:50%;background:var(--paper);border:2px solid var(--ink-soft);margin-top:5px;transition:all .2s}
+.stop:hover .nm,.stop[aria-pressed="true"] .nm{color:var(--ink)}
+.stop[aria-pressed="true"] .dot{background:var(--dot);border-color:var(--ink);box-shadow:0 0 0 6px color-mix(in srgb,var(--dot) 26%,transparent)}
+.stop[aria-pressed="true"] .tick{background:var(--ink);height:50px}
+
+.readout{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(20px,3vw,48px);border-top:1px solid var(--rule);padding-top:30px}
+.readout h3{margin-bottom:10px}
+.swatch{display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--stop);margin-right:9px}
+.depth{margin-top:22px}
+.depth-label{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}
+.depth-bar{height:6px;background:var(--paper-2);border:1px solid var(--rule);border-radius:99px;overflow:hidden}
+.depth-fill{height:100%;background:var(--stop);width:12%;transition:width .5s cubic-bezier(.4,0,.2,1),background .5s}
+.hint{font-family:var(--mono);font-size:12px;color:var(--ink-soft);margin-top:28px;line-height:1.7}
+
+/* pillars */
+.cols-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.cols-3 article{background:var(--paper);padding:clamp(24px,2.6vw,38px)}
+.cols-3 article p{font-size:15px;margin-top:12px;color:#4A2A3B}
+.pill{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--fuchsia-ink);text-transform:uppercase;margin-bottom:20px;display:block}
+
+/* how */
+.how{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);align-items:start}
+.force{border:1px solid var(--rule);padding:22px 24px;position:relative;overflow:hidden;background:var(--paper)}
+.force + .plus + .force{margin-top:0}
+.two-forces{display:grid;gap:14px}
+.force h3{font-size:17px}
+.force p{font-size:15px;margin-top:8px;color:#4A2A3B}
+.force::after{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--fuchsia)}
+.force.rf::after{background:var(--violet)}
+.plus{font-family:var(--disp);font-weight:300;font-size:32px;color:var(--ink-soft);text-align:center;line-height:1}
+
+/* treats */
+.treats{border-top:1px solid var(--rule);margin-top:44px}
+.treat{display:grid;grid-template-columns:60px 1fr auto;gap:24px;align-items:center;padding:24px 0;border-bottom:1px solid var(--rule);transition:padding-left .3s ease}
+.treat:hover{padding-left:14px;background:linear-gradient(90deg,var(--paper-2),transparent 40%)}
+.treat-n{font-family:var(--mono);font-size:12px;color:var(--ink-soft)}
+.treat h3{font-size:clamp(19px,2.2vw,30px);font-weight:600;letter-spacing:-.03em}
+.treat span{font-size:14px;color:var(--ink-soft);text-align:right;max-width:34ch}
+
+/* specs */
+.specs{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(24px,5vw,72px);margin-top:44px}
+.row{display:flex;justify-content:space-between;gap:20px;padding:15px 0;border-bottom:1px solid var(--rule);font-size:15px}
+.row dt{color:var(--ink-soft)}
+.row dd{font-family:var(--mono);text-align:right;font-size:14px}
+.kit{columns:2;column-gap:48px;margin-top:24px}
+.kit li{list-style:none;padding:11px 0 11px 26px;position:relative;font-size:15px;break-inside:avoid;border-bottom:1px solid var(--rule-soft)}
+.kit li::before{content:"";position:absolute;left:0;top:19px;width:9px;height:9px;background:var(--fuchsia)}
+.kit b{font-family:var(--mono);color:var(--ink-soft);font-weight:400;font-size:13px;margin-left:6px}
+
+/* trust */
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);margin-top:44px}
+.trust div{background:var(--paper-2);padding:24px;font-size:14px;line-height:1.45;color:#4A2A3B}
+.trust strong{display:block;font-family:var(--disp);font-weight:600;font-size:15px;margin-bottom:6px;letter-spacing:-.01em;color:var(--ink)}
+
+/* details */
+details{border:1px solid var(--rule);padding:20px 24px;margin-top:18px;background:var(--paper-2)}
+summary{cursor:pointer;font-weight:700;font-size:15px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--mono);color:var(--fuchsia);font-size:20px;line-height:1}
+details[open] summary::after{content:"−"}
+details ul{margin-top:18px;columns:2;column-gap:40px}
+details li{list-style:none;font-size:14px;color:#4A2A3B;padding:6px 0 6px 16px;position:relative;break-inside:avoid}
+details li::before{content:"";position:absolute;left:0;top:15px;width:5px;height:1px;background:var(--fuchsia)}
+
+/* offer */
+.offer{background:var(--fuchsia);color:#fff}
+.offer h2,.offer h3{color:#fff}
+.offer p{color:rgba(255,255,255,.92)}
+.offer .eyebrow{color:rgba(255,255,255,.8)}
+.offer .eyebrow::before{background:#fff}
+.price{font-family:var(--mono);font-weight:700;font-size:clamp(38px,6vw,80px);letter-spacing:-.04em;line-height:1;margin:6px 0 10px}
+.old-price{font-family:var(--mono);font-size:16px;text-decoration:line-through;color:rgba(255,255,255,.6)}
+.offer-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:start}
+.offer-note{font-size:13px;color:rgba(255,255,255,.78);margin-top:18px;max-width:44ch}
+
+/* form */
+.form{display:grid;gap:12px;margin-top:24px}
+.form label{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.8);display:block;margin-bottom:6px}
+.form input,.form textarea{width:100%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.4);color:#fff;padding:13px 15px;font-family:var(--body);font-size:15px;border-radius:2px}
+.form input::placeholder,.form textarea::placeholder{color:rgba(255,255,255,.55)}
+.form input:focus,.form textarea:focus{background:rgba(255,255,255,.2);outline:2px solid #fff;outline-offset:0}
+.form .btn-main{background:#fff;color:var(--fuchsia-ink);width:100%;margin-top:4px}
+.form .btn-main:hover{box-shadow:0 14px 34px -14px rgba(0,0,0,.5)}
+.consent{font-size:12px;color:rgba(255,255,255,.72);line-height:1.5}
+
+/* footer */
+footer{background:var(--ink);color:var(--paper);font-size:14px}
+footer .brand span{color:var(--fuchsia)}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding:60px 0 36px}
+footer h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#B78CA6;margin-bottom:16px;font-weight:400}
+footer p,footer li{color:#D9B8CB;list-style:none;margin-bottom:8px}
+.legal{border-top:1px solid rgba(255,255,255,.12);padding:22px 0;color:#B78CA6;font-size:12px;line-height:1.6}
+
+@media (max-width:900px){
+  .top nav{display:none}
+  .hero-grid,.gal,.how,.specs,.offer-grid,.readout,.foot{grid-template-columns:1fr}
+  .facts,.trust{grid-template-columns:1fr 1fr}
+  .cols-3{grid-template-columns:1fr}
+  .kit,details ul{columns:1}
+  .thumbs{grid-template-columns:repeat(6,1fr)}
+  .treat{grid-template-columns:40px 1fr;gap:14px}
+  .treat span{grid-column:2;text-align:left;max-width:none;margin-top:6px}
+  .scale{height:116px}
+  .stop{width:44px}
+  .stop .nm{font-size:10px}
+}
+@media (max-width:520px){
+  .facts{grid-template-columns:1fr}
+  .tel{display:none}
+  .thumbs{grid-template-columns:repeat(3,1fr)}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">Бьюти<span>·</span>Инструмент</div>
+    <nav>
+      <a href="#photo">Фото</a>
+      <a href="#spectrum">Спектр</a>
+      <a href="#how">Как работает</a>
+      <a href="#specs">Характеристики</a>
+      <a href="#price">Цена</a>
+    </nav>
+    <a class="tel" href="tel:88006003890">8 800 600 38 90</a>
+    <a class="btn btn-main btn-sm" href="#price">Тест-драйв</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Elos Expert · настольный корпус</div>
+        <h1>Шесть длин волн.<em>Один аппарат.</em></h1>
+        <p class="hero-sub">Свет и радиочастота в одном импульсе. Эпиляция, омоложение, пигментация, сосуды, постакне — на одной манипуле мощностью 1000 Вт.</p>
+        <div class="hero-cta">
+          <a class="btn btn-main" href="#price">Записаться на тест-драйв</a>
+          <a class="btn btn-ghost" href="#photo">Смотреть фото</a>
+        </div>
+      </div>
+      <figure class="shot">
+        <span class="shot-tag">462 000 ₽</span>
+        <img src="https://beautyinstrument.ru/upload/resize_cache/iblock/e91/512_700_1/6jd7qophb7y1909tblb3jh20by6uh45h.JPG" alt="Аппарат Elos Expert в настольном корпусе">
+      </figure>
+    </div>
+
+    <div class="pulse"><div class="pulse-track" aria-hidden="true"></div></div>
+    <div class="facts">
+      <div><b>1000 Вт</b><small>мощность манипулы</small></div>
+      <div><b>6</b><small>фильтров в комплекте</small></div>
+      <div><b>1 000 000</b><small>вспышек ресурс</small></div>
+      <div><b>15,6″</b><small>сенсорный экран</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="band" id="photo">
+  <div class="wrap">
+    <div class="eyebrow">Фотографии</div>
+    <h2>Корпус, экран, манипула</h2>
+    <p class="lead">Реальные снимки аппарата и комплекта. Нажмите на миниатюру, чтобы рассмотреть.</p>
+
+    <div class="gal">
+      <figure class="gal-main">
+        <img id="gal-img" src="https://beautyinstrument.ru/upload/resize_cache/iblock/e91/512_700_1/6jd7qophb7y1909tblb3jh20by6uh45h.JPG" alt="Аппарат Elos Expert — фотография 1">
+        <figcaption class="gal-count"><span id="gal-n">1</span> / 6</figcaption>
+      </figure>
+      <div>
+        <div class="thumbs" id="thumbs"></div>
+        <p class="gal-note">Elos Expert, настольный корпус.<br>Манипула ELOS, 6 сменных фильтров, педаль, процедурные очки.</p>
+        <a class="btn btn-ghost btn-sm" href="#price" style="margin-top:18px">Посмотреть вживую</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECTRUM -->
+<section class="band" id="spectrum">
+  <div class="wrap">
+    <div class="eyebrow">Спектральная линейка</div>
+    <h2>Один аппарат вместо шести</h2>
+    <p class="lead">Каждый фильтр отсекает короткие волны и пропускает всё, что длиннее. Чем длиннее волна — тем глубже свет заходит в кожу. Нажмите на отметку, чтобы увидеть, чем вы работаете.</p>
+
+    <div class="ruler-shell" style="--stop:#2E8BFF;margin-top:40px">
+      <div class="scale" id="scale"><div class="scale-line" aria-hidden="true"></div></div>
+      <div class="readout">
+        <div>
+          <h3><span class="swatch" aria-hidden="true"></span><span id="r-title">480 нм — синий край</span></h3>
+          <p id="r-desc">Самая короткая волна в комплекте. Работает по поверхности: свет почти не заходит вглубь.</p>
+          <div class="depth">
+            <div class="depth-label">Глубина проникновения — относительная шкала</div>
+            <div class="depth-bar"><div class="depth-fill" id="r-depth"></div></div>
+          </div>
+        </div>
+        <div>
+          <p class="dim" style="font-size:15px">Фильтр подбирается по фототипу кожи и толщине волоса. В меню есть готовые пресеты под зоны тела и полностью ручной режим: интенсивность, частота и длительность импульса, пауза, длительность сеанса, температура охлаждения.</p>
+          <p class="hint">480 / 530 / 590 / 640 / 690 / 750–1200 нм<br>Все шесть фильтров входят в комплект. Покупать нечего.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="band">
+  <div class="wrap">
+    <div class="eyebrow">Почему берут именно его</div>
+    <h2>Три причины, которые видно в отчёте кабинета</h2>
+    <div class="cols-3" style="margin-top:44px">
+      <article>
+        <span class="pill">Загрузка</span>
+        <h3>Пять процедур на одной манипуле</h3>
+        <p>Эпиляция светлых и тёмных волос, омоложение, постакне, пигментация, сосудистая сетка. Кабинет не простаивает между записями.</p>
+      </article>
+      <article>
+        <span class="pill">Ресурс</span>
+        <h3>До 1 000 000 вспышек</h3>
+        <p>Манипула производства Великобритании. Замкнутый цикл охлаждения: вода, воздух, полупроводник и система TEC — 10–12 часов непрерывной работы.</p>
+      </article>
+      <article>
+        <span class="pill">Логистика</span>
+        <h3>Настольный корпус</h3>
+        <p>Переносится вдвоём, переезжает вместе с кабинетом, не съедает метраж. Экран 15,6″ — параметры видно с рабочего места.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="band" id="how">
+  <div class="wrap">
+    <div class="how">
+      <div>
+        <div class="eyebrow">Технология ELOS</div>
+        <h2>Свет и ток в одном импульсе</h2>
+        <p class="lead">Оптическая энергия повышает проводимость тканей — и следом идёт радиочастотное воздействие. Одно усиливает другое, поэтому энергии на каждую вспышку нужно меньше.</p>
+      </div>
+      <div class="two-forces">
+        <div class="force">
+          <h3>Световая энергия</h3>
+          <p>Нагревает волос и питающий его сосуд — волос погибает. Повышение температуры разрушает клетки, вызывающие гиперпигментацию меланина: тон кожи выравнивается.</p>
+        </div>
+        <div class="plus" aria-hidden="true">+</div>
+        <div class="force rf">
+          <h3>Радиочастота, 50 Вт</h3>
+          <p>Глубокий прогрев активизирует фибробласты, стимулирует выработку гиалуроновой кислоты, коллагена и эластина. Рельеф выравнивается, появляется эффект лифтинга.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TREATS -->
+<section class="band">
+  <div class="wrap">
+    <div class="eyebrow">Процедуры</div>
+    <h2>Что вы ставите в прайс</h2>
+    <div class="treats">
+      <div class="treat"><span class="treat-n">01</span><h3>Удаление волос</h3><span>Светлых и тёмных, у мужчин и женщин, практически на любом участке тела</span></div>
+      <div class="treat"><span class="treat-n">02</span><h3>Омоложение</h3><span>Лифтинг и выравнивание рельефа за счёт RF-прогрева</span></div>
+      <div class="treat"><span class="treat-n">03</span><h3>Коррекция постакне</h3><span>И профилактика акне</span></div>
+      <div class="treat"><span class="treat-n">04</span><h3>Коррекция пигментации</h3><span>Осветление и выравнивание тона</span></div>
+      <div class="treat"><span class="treat-n">05</span><h3>Сосудистая сетка</h3><span>Восстановление после процедуры не требуется</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECS -->
+<section class="band" id="specs">
+  <div class="wrap">
+    <div class="eyebrow">Характеристики</div>
+    <h2>Всё, что спросит инженер</h2>
+    <div class="specs">
+      <dl>
+        <div class="row"><dt>Электропитание</dt><dd>220 В · 50 Гц</dd></div>
+        <div class="row"><dt>Потребляемая мощность</dt><dd>1000 Вт</dd></div>
+        <div class="row"><dt>Стабилизатор напряжения</dt><dd>от 3000 Вт</dd></div>
+        <div class="row"><dt>Экран</dt><dd>15,6″ сенсорный</dd></div>
+        <div class="row"><dt>Непрерывная работа</dt><dd>10–12 часов</dd></div>
+        <div class="row"><dt>Лампа</dt><dd>ксеноновая, США</dd></div>
+        <div class="row"><dt>Манипула ELOS</dt><dd>Великобритания</dd></div>
+      </dl>
+      <dl>
+        <div class="row"><dt>Пятно манипулы</dt><dd>15 × 50 мм²</dd></div>
+        <div class="row"><dt>Длина волны</dt><dd>480–1200 нм</dd></div>
+        <div class="row"><dt>Энергия</dt><dd>1–50 Дж/см²</dd></div>
+        <div class="row"><dt>Мощность RF</dt><dd>50 Вт</dd></div>
+        <div class="row"><dt>Частота импульсов</dt><dd>1–10 Гц</dd></div>
+        <div class="row"><dt>Длительность импульса</dt><dd>1–10 мс</dd></div>
+        <div class="row"><dt>Охлаждение</dt><dd>−10 °C … +5 °C · 5 уровней</dd></div>
+      </dl>
+    </div>
+
+    <h3 style="margin-top:60px">В коробке</h3>
+    <ul class="kit">
+      <li>Основной блок управления <b>1 шт</b></li>
+      <li>Манипула ELOS <b>1 шт</b></li>
+      <li>Фильтры для манипулы <b>6 шт</b></li>
+      <li>Педаль управления <b>1 шт</b></li>
+      <li>Кабель электропитания <b>1 шт</b></li>
+      <li>Ключи от основного блока <b>2 шт</b></li>
+      <li>Очки процедурные для клиента <b>1 шт</b></li>
+      <li>Очки процедурные для специалиста <b>1 шт</b></li>
+      <li>Воронка со шлангом для залива воды <b>1 шт</b></li>
+    </ul>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="band">
+  <div class="wrap">
+    <div class="eyebrow">Условия</div>
+    <h2>Что берёт на себя поставщик</h2>
+    <div class="trust">
+      <div><strong>Гарантия 12–24 месяца</strong>Свой сервисный центр в Москве и Краснодаре</div>
+      <div><strong>Кредит и рассрочка</strong>ВТБ Банк, Т-Банк и другие — на срок до 3 лет</div>
+      <div><strong>Сертификаты соответствия</strong>Полный пакет документов на аппарат</div>
+      <div><strong>Нашли дешевле</strong>Пришлите ссылку — пересчитаем цену</div>
+    </div>
+
+    <details>
+      <summary>Показания и противопоказания — прочитайте до покупки</summary>
+      <p style="margin-top:16px;font-size:15px" class="dim"><b>Показания:</b> необходимость коррекции волосяного покрова, возрастные изменения кожи.</p>
+      <p style="margin-top:14px;font-size:15px" class="dim"><b>Противопоказания:</b></p>
+      <ul>
+        <li>Беременность и период лактации</li>
+        <li>Онкология</li>
+        <li>Патологии сердечно-сосудистой системы</li>
+        <li>Металлические импланты в зоне воздействия</li>
+        <li>Сахарный диабет в стадии декомпенсации</li>
+        <li>Нарушение целостности кожи или инфекции в зоне воздействия</li>
+        <li>Кардиостимулятор, дефибриллятор, водитель ритма</li>
+        <li>Перенесённый инсульт, травмы и операции на головном мозге</li>
+        <li>Болезни крови, активные кровотечения</li>
+        <li>Психотропные препараты, витамин А, изотретиноин в последние 6 месяцев</li>
+        <li>Препараты с фотосенсибилизирующим эффектом</li>
+        <li>Хронические заболевания в стадии обострения</li>
+        <li>Аутоиммунные заболевания</li>
+        <li>Эндокринные нарушения</li>
+        <li>Татуировки в зоне воздействия</li>
+        <li>Инфекционные и воспалительные процессы</li>
+        <li>Индивидуальная непереносимость процедуры</li>
+      </ul>
+    </details>
+  </div>
+</section>
+
+<!-- OFFER + FORM -->
+<section class="band offer" id="price">
+  <div class="wrap">
+    <div class="offer-grid">
+      <div>
+        <div class="eyebrow">Elos Expert · настольный корпус</div>
+        <div class="old-price">1 240 000 ₽</div>
+        <div class="price">462 000 ₽</div>
+        <p>Оценка 5,0 из 5 — 248 отзывов о компании, 4 отзыва об аппарате.</p>
+        <p class="offer-note">Цена актуальна при наличном расчёте. При безналичном расчёте и покупке в кредит стоимость уточняйте у менеджера.</p>
+        <h3 style="margin-top:40px;font-size:22px">Тест-драйв бесплатный</h3>
+        <p style="margin-top:10px;font-size:15px">Включим аппарат, дадим манипулу в руки, пройдём по всем шести фильтрам. Из другого города — проведём онлайн-обзор.</p>
+      </div>
+
+      <div>
+        <h3 style="font-size:clamp(22px,2.6vw,32px);margin-bottom:6px">Записаться на тест-драйв</h3>
+        <p style="font-size:15px">Менеджер перезвонит и подберёт удобное время.</p>
+        <div class="form">
+          <div>
+            <label for="f-name">Имя</label>
+            <input id="f-name" type="text" placeholder="Как к вам обращаться" required>
+          </div>
+          <div>
+            <label for="f-tel">Телефон</label>
+            <input id="f-tel" type="tel" placeholder="+7 ___ ___ __ __" required>
+          </div>
+          <div>
+            <label for="f-msg">Сообщение</label>
+            <textarea id="f-msg" rows="3" placeholder="Не обязательно"></textarea>
+          </div>
+          <button class="btn btn-main" id="f-send" type="button">Отправить заявку</button>
+          <p class="consent">Нажимая «Отправить заявку», вы соглашаетесь на обработку персональных данных в соответствии с ФЗ-152-ФЗ.</p>
+          <p class="consent" id="f-status" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <div class="brand" style="font-size:18px;margin-bottom:14px">Бьюти<span>·</span>Инструмент</div>
+      <p>Оборудование для салонов красоты. Собственный сервисный центр и обучение аппаратной косметологии.</p>
+    </div>
+    <div>
+      <h4>Контакты</h4>
+      <ul>
+        <li>г. Москва, Научный проезд, 19, 1 этаж</li>
+        <li>м. Калужская</li>
+        <li><a href="tel:88006003890">8 (800) 600 38-90</a></li>
+        <li><a href="mailto:director@beautyinstrument.ru">director@beautyinstrument.ru</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Режим работы</h4>
+      <ul>
+        <li>Обработка заказов — круглосуточно</li>
+        <li>Офис: пн–пт 08:00–20:00</li>
+        <li>Сб 10:00–18:00, вс — выходной</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap legal">
+    Всё оборудование и запчасти, представленные на сайте, предназначены для предпринимательской деятельности. Отказ от товара и возврат денежных средств покупатель вправе осуществить при условии: товар поставлен с существенным нарушением требований к качеству; неоднократно нарушен срок поставки (ст. 475, 518, 523 ГК РФ).<br><br>
+    2026 © Компания «Бьюти-Инструмент»
+  </div>
+</footer>
+
+<script>
+// pulse
+const track = document.querySelector('.pulse-track');
+for (let i = 0; i < 48; i++) {
+  const bar = document.createElement('i');
+  bar.style.animationDelay = (i * 0.045).toFixed(3) + 's';
+  bar.style.animationDuration = (2.0 + (i % 5) * 0.18).toFixed(2) + 's';
+  track.appendChild(bar);
+}
+
+// gallery
+const BASE = 'https://beautyinstrument.ru/upload/resize_cache/iblock/';
+const PHOTOS = [
+  BASE + 'e91/512_700_1/6jd7qophb7y1909tblb3jh20by6uh45h.JPG',
+  BASE + '32f/512_700_1/b8x1o6p3fqa1pyanqux4msnvaeqm08gq.JPG',
+  BASE + '230/512_700_1/ooxmoeysegipd30z315du2hydto6vrc7.JPG',
+  BASE + 'b43/512_700_1/0jeakjdfhjttiu94eu98kwmyld8yjz1u.JPG',
+  BASE + '91b/512_700_1/lb8piuka2mc2udtyvzvsuuqmt9n2afd7.JPG',
+  BASE + 'd44/512_700_1/2fwb4d30j6ya6z817bztio1p757k1zdn.jpg'
+];
+const thumbs = document.getElementById('thumbs');
+const galImg = document.getElementById('gal-img');
+const galN = document.getElementById('gal-n');
+
+PHOTOS.forEach((src, i) => {
+  const b = document.createElement('button');
+  b.type = 'button';
+  b.setAttribute('aria-pressed', i === 0);
+  b.setAttribute('aria-label', 'Показать фотографию ' + (i + 1));
+  const im = document.createElement('img');
+  im.src = src;
+  im.alt = 'Аппарат Elos Expert — миниатюра ' + (i + 1);
+  im.loading = 'lazy';
+  b.appendChild(im);
+  b.addEventListener('click', () => {
+    galImg.src = src;
+    galImg.alt = 'Аппарат Elos Expert — фотография ' + (i + 1);
+    galN.textContent = i + 1;
+    thumbs.querySelectorAll('button').forEach((t, j) => t.setAttribute('aria-pressed', i === j));
+  });
+  thumbs.appendChild(b);
+});
+
+// spectrum ruler
+const FILTERS = [
+  {nm:'480',  color:'#2E8BFF', title:'480 нм — синий край',        depth:12,  desc:'Самая короткая волна в комплекте. Работает по поверхности: свет почти не заходит вглубь.'},
+  {nm:'530',  color:'#3FCF6B', title:'530 нм — зелёный',           depth:26,  desc:'Отсекает синюю часть спектра. Дальше по шкале — меньше рассеяния, больше проникновения.'},
+  {nm:'590',  color:'#FFB300', title:'590 нм — янтарный',          depth:42,  desc:'Середина набора. Универсальная точка, с которой чаще всего начинают подбор под фототип.'},
+  {nm:'640',  color:'#FF4B3E', title:'640 нм — красный',           depth:60,  desc:'Длинная волна: свет доходит до более глубоких структур, поверхность нагревается меньше.'},
+  {nm:'690',  color:'#D62B3F', title:'690 нм — тёмно-красный',     depth:76,  desc:'Ещё меньше поглощения в поверхностных слоях. Рабочий диапазон для более тёмных фототипов.'},
+  {nm:'750+', color:'#7A1046', title:'750–1200 нм — инфракрасный', depth:100, desc:'Свет не виден глазу. Максимальная глубина в наборе — вся длинноволновая часть спектра сразу.'}
+];
+const scale = document.getElementById('scale');
+const shell = document.querySelector('.ruler-shell');
+const rTitle = document.getElementById('r-title');
+const rDesc = document.getElementById('r-desc');
+const rDepth = document.getElementById('r-depth');
+
+FILTERS.forEach((f, i) => {
+  const b = document.createElement('button');
+  b.className = 'stop';
+  b.type = 'button';
+  b.style.left = (6 + i * 17.6) + '%';
+  b.style.setProperty('--dot', f.color);
+  b.setAttribute('aria-pressed', i === 0);
+  b.setAttribute('aria-label', 'Фильтр ' + f.nm + ' нанометров');
+  b.innerHTML = '<span class="nm">' + f.nm + '</span><span class="tick"></span><span class="dot"></span>';
+  b.addEventListener('click', () => select(i));
+  scale.appendChild(b);
+});
+function select(i) {
+  const f = FILTERS[i];
+  document.querySelectorAll('.stop').forEach((s, j) => s.setAttribute('aria-pressed', i === j));
+  shell.style.setProperty('--stop', f.color);
+  rTitle.textContent = f.title;
+  rDesc.textContent = f.desc;
+  rDepth.style.width = f.depth + '%';
+}
+select(0);
+
+// form -> mailto (заменить на реальный обработчик / CRM)
+document.getElementById('f-send').addEventListener('click', () => {
+  const name = document.getElementById('f-name').value.trim();
+  const tel = document.getElementById('f-tel').value.trim();
+  const msg = document.getElementById('f-msg').value.trim();
+  const status = document.getElementById('f-status');
+  if (!name || !tel) {
+    status.textContent = 'Заполните имя и телефон.';
+    return;
+  }
+  status.textContent = 'Открываем почтовый клиент…';
+  const body = 'Имя: ' + name + '%0AТелефон: ' + tel + '%0AСообщение: ' + (msg || '—');
+  window.location.href = 'mailto:director@beautyinstrument.ru?subject=' +
+    encodeURIComponent('Тест-драйв Elos Expert') + '&body=' + body;
+});
+</script>
+</body>
+</html>
