@@ -9,8 +9,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;800&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#FFF7FA;
-  --paper-2:#FFEDF4;
+  --paper:#FFFFFF;
+  --paper-2:#F5F5F5;
   --ink:#1A0713;
   --ink-soft:#6A4557;
   --fuchsia:#FF0F80;
@@ -47,7 +47,7 @@ p{color:#3D1F30}
 .dim{color:var(--ink-soft)}
 
 /* header */
-.top{position:sticky;top:0;z-index:60;background:rgba(255,247,250,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--rule)}
+.top{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--rule)}
 .top .wrap{display:flex;align-items:center;gap:20px;height:66px}
 .brand{font-family:var(--disp);font-weight:800;font-size:15px;letter-spacing:-.02em}
 .brand span{color:var(--fuchsia)}
@@ -247,8 +247,8 @@ footer p,footer li{color:#D9B8CB;list-style:none;margin-bottom:8px}
     <div class="hero-grid">
       <div>
         <div class="eyebrow">Elos Expert · настольный корпус</div>
-        <h1>Шесть длин волн.<em>Один аппарат.</em></h1>
-        <p class="hero-sub">Свет и радиочастота в одном импульсе. Эпиляция, омоложение, пигментация, сосуды, постакне — на одной манипуле мощностью 1000 Вт.</p>
+        <h1>Один аппарат —<em>пять услуг в прайсе.</em></h1>
+        <p class="hero-sub">Elos-технология: свет и радиочастота в одном импульсе. Эпиляция, омоложение, пигментация, сосуды и постакне — на одной манипуле мощностью 1000 Вт. Шесть сменных фильтров закрывают все фототипы: докупать ничего не нужно.</p>
         <div class="hero-cta">
           <a class="btn btn-main" href="#price">Записаться на тест-драйв</a>
           <a class="btn btn-ghost" href="#photo">Смотреть фото</a>
@@ -332,7 +332,7 @@ footer p,footer li{color:#D9B8CB;list-style:none;margin-bottom:8px}
       <article>
         <span class="pill">Ресурс</span>
         <h3>До 1 000 000 вспышек</h3>
-        <p>Манипула производства Великобритании. Замкнутый цикл охлаждения: вода, воздух, полупроводник и система TEC — 10–12 часов непрерывной работы.</p>
+        <p>Ресурса манипулы хватает на годы работы. Замкнутый цикл охлаждения (вода, воздух, полупроводник и система TEC) держит 10–12 часов непрерывно — кабинет не встаёт в пиковые дни. Манипула производства Великобритании.</p>
       </article>
       <article>
         <span class="pill">Логистика</span>
@@ -350,7 +350,7 @@ footer p,footer li{color:#D9B8CB;list-style:none;margin-bottom:8px}
       <div>
         <div class="eyebrow">Технология ELOS</div>
         <h2>Свет и ток в одном импульсе</h2>
-        <p class="lead">Оптическая энергия повышает проводимость тканей — и следом идёт радиочастотное воздействие. Одно усиливает другое, поэтому энергии на каждую вспышку нужно меньше.</p>
+        <p class="lead">Оптическая энергия повышает проводимость тканей — и следом идёт радиочастотное воздействие. Одно усиливает другое, поэтому энергии на каждую вспышку нужно меньше: процедура мягче для клиента и бережнее к ресурсу лампы.</p>
       </div>
       <div class="two-forces">
         <div class="force">
@@ -473,7 +473,7 @@ footer p,footer li{color:#D9B8CB;list-style:none;margin-bottom:8px}
         <p>Оценка 5,0 из 5 — 248 отзывов о компании, 4 отзыва об аппарате.</p>
         <p class="offer-note">Цена актуальна при наличном расчёте. При безналичном расчёте и покупке в кредит стоимость уточняйте у менеджера.</p>
         <h3 style="margin-top:40px;font-size:22px">Тест-драйв бесплатный</h3>
-        <p style="margin-top:10px;font-size:15px">Включим аппарат, дадим манипулу в руки, пройдём по всем шести фильтрам. Из другого города — проведём онлайн-обзор.</p>
+        <p style="margin-top:10px;font-size:15px">Включим аппарат, дадим манипулу в руки, пройдём по всем шести фильтрам. Из другого города — проведём онлайн-обзор. Без предоплаты и обязательств.</p>
       </div>
 
       <div>
@@ -492,8 +492,8 @@ footer p,footer li{color:#D9B8CB;list-style:none;margin-bottom:8px}
             <label for="f-msg">Сообщение</label>
             <textarea id="f-msg" rows="3" placeholder="Не обязательно"></textarea>
           </div>
-          <button class="btn btn-main" id="f-send" type="button">Отправить заявку</button>
-          <p class="consent">Нажимая «Отправить заявку», вы соглашаетесь на обработку персональных данных в соответствии с ФЗ-152-ФЗ.</p>
+          <button class="btn btn-main" id="f-send" type="button">Записаться на тест-драйв</button>
+          <p class="consent">Нажимая «Записаться на тест-драйв», вы соглашаетесь на обработку персональных данных в соответствии с ФЗ-152-ФЗ.</p>
           <p class="consent" id="f-status" role="status" aria-live="polite"></p>
         </div>
       </div>
