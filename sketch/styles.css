@@ -520,3 +520,5 @@ body { --dock-h: calc(72px + env(safe-area-inset-bottom)); }
 @media(max-width:959px){.hero__cta{display:none}}
 
 .face-feature{margin:28px 0;background:linear-gradient(120deg,#fff,#eaf3fb);border-color:#d5e7f6}.face-feature .kicker{margin-top:0}.face-feature .fine{margin-bottom:0}
+
+.training-offer{padding:64px 0;background:linear-gradient(125deg,#061430,#0b3b8c);color:#fff}.training-offer .h2{max-width:24ch}.training-offer .lede{color:#eaf3fb;max-width:65ch;margin:24px 0}.training-offer .fine{color:#d5e7f6;max-width:80ch;margin:20px 0 0}.training-offer .btn{margin-top:4px}@media(max-width:959px){.training-offer{padding:40px 0}.training-offer .btn{width:100%}}
