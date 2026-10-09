@@ -518,3 +518,5 @@ body { --dock-h: calc(72px + env(safe-area-inset-bottom)); }
 @media(max-width:959px){.hero{padding:24px 0 28px}.hero__grid{gap:14px}.hero__title{font-size:clamp(2rem,8.6vw,3.5rem)}.hero__lead{order:2}.hero__media{order:3}.hero__frame{height:230px}.hero__price{order:4;padding:8px 0}.hero__note{margin-top:6px}.hero__cta{display:flex;order:5}.hero__cta .btn{font-size:14px}.hero__cap{font-size:14px;margin-top:6px}.hero .eyebrow{font-size:12px;letter-spacing:.02em}.live{padding:36px 0}.live__grid{gap:12px}.live figure img{height:210px}.live figcaption{padding:14px}.live figcaption b{font-size:18px}.live figcaption span{font-size:14px;line-height:1.5}.try{display:block;padding:22px}.try .btn{margin-top:18px;width:100%}.quick-models{grid-template-columns:1fr 1fr}.quick-models a{padding:16px 12px}.quick-models b{font-size:22px}}
 
 @media(max-width:959px){.hero__cta{display:none}}
+
+.face-feature{margin:28px 0;background:linear-gradient(120deg,#fff,#eaf3fb);border-color:#d5e7f6}.face-feature .kicker{margin-top:0}.face-feature .fine{margin-bottom:0}
